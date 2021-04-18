@@ -6,15 +6,23 @@
   font-family:"Quicksand";
 }
 body{
-  background:linear-gradient(to right, #001122 0%,#53e3a6 100%);
+  background:linear-gradient(to right, #001122 0%,#26A69A 100%);
 }
-
 .ht{
   color:white;
 }
 .logo{
   height:40px;
   width:115px;
+}
+.nav-log{
+  height:45px;
+  width:80px;
+  margin:0px 10px;
+}
+.fa-copyright{
+  position: relative;
+  top:0.15vw;
 }
 .ctdlogo{
   height:150px;
