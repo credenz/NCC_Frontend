@@ -15,13 +15,13 @@ const instructions = () => {
                     <h2> Instructions <i className="fa fa-lightbulb-o" aria-hidden="true"></i></h2>
                 </div>
                 <div className="inst-content card-body brdr">
-                    <ol>
+                    <ul>
                        {inst.map(inst => {
                            return(
                            <li key={inst.key}>{inst.description}<p/></li>     
                            );
                         })}
-                    </ol>
+                    </ul>
                 </div>
                 <div className="confirm brdr">
                 <label><input type="checkbox"></input><span className="confirm-txt">I have read all the instructions carefully !</span></label>

@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-import {Link} from 'react-router-dom';
 
 class login extends Component{
     constructor(props){
@@ -32,6 +31,20 @@ class login extends Component{
         return ( 
     
             <div className="form-box">
+                <div className="background">
+                <ul className="bg-bubbles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
                 <div className="head-form">
                     <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
                 </div>
@@ -52,6 +65,7 @@ class login extends Component{
                                 <button type="submit" className="btn btn-info btn-block bts">Login</button>
                         </form>
                 </div>
+            
         </div>
          );
 

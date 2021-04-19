@@ -1,0 +1,19 @@
+.tab{
+   background:linear-gradient(to bottom right,#001122,#002244);
+   width:90vw;
+   color:white;
+   text-align:center;
+   vertical-align: middle;
+}
+.th{
+    height:4vw;
+}
+td{
+    height:4vw;
+}
+.progress{
+    height:2vw;
+}
+.progress-bar{
+    width:50%;
+}
