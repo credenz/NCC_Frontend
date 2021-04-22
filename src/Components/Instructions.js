@@ -14,7 +14,7 @@ const instructions = () => {
                 <div className="inst-title card-title mt-3 brdr">
                     <h2> Instructions <i className="fa fa-lightbulb-o" aria-hidden="true"></i></h2>
                 </div>
-                <div className="inst-content card-body brdr">
+                <div className="inst-content card-body brdr mt-2">
                     <ul>
                        {inst.map(inst => {
                            return(

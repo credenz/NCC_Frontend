@@ -1,84 +1,55 @@
 import './css/quehub.css';
+import {useState} from 'react';
 import {Table} from 'react-bootstrap';
+import {ProgressBar} from 'react-bootstrap';
 
-const questions = () => {
+const Questions = () => {
+    const [ques, setQues] = useState([
+        {id:0, qno:1, submit:Math.floor(Math.random()*100)},
+        {id:1, qno:2, submit:Math.floor(Math.random()*100)},
+        {id:2, qno:3, submit:Math.floor(Math.random()*100)},
+        {id:3, qno:4, submit:Math.floor(Math.random()*100)},
+        {id:4, qno:5, submit:Math.floor(Math.random()*100)},
+        {id:5, qno:6, submit:Math.floor(Math.random()*100)}
+    ]);
 
     return ( 
         <div className="row">
-            <Table responsive className="tab">
-                <thead className="th">
-                    <tr>
-                    <th>Sr.No</th>
+            <Table responsive borderless className="tab-head">
+                <thead>
+                    <tr className="head">
+                    <th></th>
+                    <th>Q.No</th>
                     <th>Submissions</th>
                     <th>Accuracy</th>
                     <th>Attempt</th>
+                    <th></th>
                     </tr>
                 </thead>
-                <tbody className="tb">
-                    <tr className="r">
-                    <td>1</td>
-                    <td>Otto</td>
-                    <td>
-                    <div className="progress">
-                    <div className="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    </td>
-                    <td>skhfsk</td>
-                    </tr>
-                    <tr className="r">
-                    <td>2</td>
-                    <td>Thornton</td>
-                    <td>
-                    <div className="progress">
-                    <div className="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    </td>
-                    <td>akhdhkajs</td>
-                    </tr>
-                    <tr className="r">
-                    <td>3</td>
-                    <td>@twitter</td>
-                    <td>
-                    <div className="progress">
-                    <div className="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    </td>
-                    <td>akhdhkajs</td>
-                    </tr>
-                    <tr className="r">
-                    <td>4</td>
-                    <td>@twitter</td>
-                    <td>
-                    <div className="progress">
-                    <div className="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    </td>
-                    <td>akhdhkajs</td>
-                    </tr>
-                    <tr className="r">
-                    <td>5</td>
-                    <td>@twitter</td>
-                    <td>
-                    <div className="progress">
-                    <div className="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    </td>
-                    <td>akhdhkajs</td>
-                    </tr>
-                    <tr className="r">
-                    <td>6</td>
-                    <td>@twitter</td>
-                    <td>
-                    <div className="progress">
-                    <div className="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                    </td>
-                    <td>akhdhkajs</td>
-                    </tr>
+                <tbody>
+                    
+                    {ques.map((ques) => (
+                        <tr key={ques.id} className="elements">
+                            <td></td>
+                            <td>{ques.qno}</td>
+                            <td>{ques.submit}</td>
+                            <td>
+                                <div>
+                                <ProgressBar variant="success" now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
+                                </div>
+                            </td>
+                            <td>
+                                <button className="btn btn-info atmpt-btn">View</button>
+                            </td>
+                            <td></td>
+                        
+                        </tr>
+                    ))} 
+                    
                 </tbody>
-            </Table>
+            </Table> 
         </div>
      );
 }
  
-export default questions;
+export default Questions;

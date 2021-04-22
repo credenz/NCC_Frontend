@@ -1,19 +1,23 @@
-.tab{
-   background:linear-gradient(to bottom right,#001122,#002244);
-   width:90vw;
+.tab-head{
+   position: absolute;
+   left:10%;
+   top:16.5%;
+   background:linear-gradient(to right,#003e3f,#001122);
+   width:80vw;
    color:white;
-   text-align:center;
-   vertical-align: middle;
+   border-radius: 5px;
+   text-align: center;
+   padding-right:1vw;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
-.th{
-    height:4vw;
-}
-td{
+.head{
     height:4vw;
 }
 .progress{
+    margin-top:0.5vw;
     height:2vw;
 }
-.progress-bar{
-    width:50%;
+.elements{
+    border-top:1px solid white;
 }
+
