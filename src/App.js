@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import Instructions from './Components/Instructions';
 import Questions from './Components/Question';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Leaderboard from './Components/Leaderboard'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
                   <Route exact path="/"><Login /></Route>
                   <Route path="/Instructions"><Instructions /></Route>
                   <Route path="/Questions"><Questions /></Route>
+                  <Route path="/Leaderboard"><Leaderboard /></Route>
               </Switch>
             </div>
 

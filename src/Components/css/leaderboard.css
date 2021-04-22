@@ -1,0 +1,36 @@
+.table-head{
+    position: absolute;
+    left:30%;
+    right:10%;
+    top:13%;
+    background:linear-gradient(to right,#003e3f,#001122);
+    width:65%;
+    color:white;
+    border-radius: 5px;
+    text-align: center;
+    padding-right:1vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+ }
+
+ .left{
+    left: 5%;
+    top:13%;
+    position: absolute;
+    width: 25%;
+    bottom: 12.5%;
+    max-height: 100%;
+    border-radius: 10px;
+    background:linear-gradient(to bottom,#003e3f,#001122);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+     color: seashell;
+     text-align: center;
+ }
+ .head{
+     height:4vw;
+     font-size: 15px;
+ }
+ .table-data{
+     border-top:1px solid white;
+    font-size: 11px;
+    font-weight: bold;
+ }

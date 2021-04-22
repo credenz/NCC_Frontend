@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 import Logout from './Logout';
+import Leaderboard from './Leaderboard'
 
 const Navbar = () =>{
     return (
@@ -19,6 +20,9 @@ const Navbar = () =>{
                 </li>
                 <li>
                 <Link className="nav-link no"><Logout /></Link>
+                </li>
+                <li className="nav-item ">
+                    <Link className="nav-link no" to="/Leaderboard">Leaderboard</Link>
                 </li>
                 </ul>
                 

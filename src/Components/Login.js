@@ -46,7 +46,7 @@ class login extends Component{
                 </ul>
             </div>
                 <div className="head-form">
-                    <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
+                    <img src="./img/logo.png" className="ctdlogo mb-4 bounce" alt="abc"></img>
                 </div>
                 <div className="body-form">
                         <form onSubmit={this.handleSubmit}>
