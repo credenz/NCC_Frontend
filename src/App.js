@@ -6,6 +6,8 @@ import Instructions from './Components/Instructions';
 import Questions from './Components/Question';
 import Submissions from './Components/Submission';
 import Leaderboard from './Components/Leaderboard';
+import Coding from './Components/Coding';
+import Code from './Components/CodeEditor';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
                   <Route path="/Instructions"><Instructions /></Route>
                   <Route path="/Questions"><Questions /></Route>
                   <Route path='/Submissions'><Submissions /></Route>
+                  <Route path='/Coding'><Coding /></Route>
+                  <Route path='/Code'><Code /></Route>
                   <Route path='/Leaderboard'><Leaderboard /></Route>
               </Switch>
             </div>

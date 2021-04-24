@@ -7,15 +7,17 @@ const Submission = () => {
         {id:0, subno:1},
         {id:1, subno:2},
         {id:2, subno:3},
-        {id:3, subno:4}
+        {id:3, subno:4},
+        {id:4, subno:5}
+       
 ]);
     return (
 
        <>
+         <div className="row rcard">
             {sub.map((sub) =>(
-                <div className="row rcard" key={sub.id}>
                     <div className="col-10 col-sm-4 col-md-3">
-                        <div className="card sub-card">
+                        <div className="card sub-card" key={sub.id}>
                             <h5 className="card-header text-center">Submission {sub.subno}</h5>
                             <div className="card-body text-center">
                                 <p className="time">Time : 00 : 00</p>
@@ -26,8 +28,9 @@ const Submission = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                     ))}
+            </div>
+           
        </>     
     
      );
