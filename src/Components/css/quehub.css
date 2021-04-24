@@ -1,7 +1,7 @@
 .tab-head{
    position: absolute;
    left:10%;
-   top:16.5%;
+   top:18.5%;
    background:linear-gradient(to right,#003e3f,#001122);
    width:80vw;
    color:white;
@@ -11,7 +11,7 @@
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .head{
-    height:4vw;
+    height:2vw;
 }
 .progress{
     margin-top:0.5vw;
@@ -19,5 +19,24 @@
 }
 .elements{
     border-top:1px solid white;
+    height:2vw;
+}
+.atmpt-btn{
+    width:8vw;
+    background-color: #26A69A !important;
+    color:white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media(min-width:1500px){
+    .tab-head{
+        font-size:35px;
+    }
+    .elements{
+        height:2vw;
+    }
+    .head{
+        height:2vw;
+    }
 }
 

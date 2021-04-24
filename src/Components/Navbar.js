@@ -3,9 +3,8 @@ import Logout from './Logout';
 
 const Navbar = () =>{
     return (
-        <nav className="navbar navbar-expand-sm navbar-light justify-content-right nbt">
-            <Link className="navbar-brand ht">NCC</Link>
-            <span className="clock" />
+        <nav className="navbar navbar-expand-sm justify-content-right nbt">
+            <h3 className="ht">NCC</h3>
             <button className="navbar-toggler navbar-dark " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon navbar-dark" />
             </button>
@@ -13,6 +12,9 @@ const Navbar = () =>{
                 <ul className="navbar-nav ">
                 <li className="nav-item ">
                     <Link className="nav-link no" to="/Questions">Question Hub </Link>
+                </li>
+                <li className="nav-item ">
+                    <Link className="nav-link no" to="/Leaderboard">Leaderboard </Link>
                 </li>
                 <li className="nav-item ">
                     <Link className="nav-link no" to="/Submissions">Submissions</Link>

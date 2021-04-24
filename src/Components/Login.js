@@ -32,19 +32,19 @@ class login extends Component{
     
             <div className="form-box">
                 <div className="background">
-                <ul className="bg-bubbles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
+                    <ul className="bg-bubbles">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
                 <div className="head-form">
                     <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
                 </div>

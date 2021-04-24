@@ -39,7 +39,7 @@ const Questions = () => {
                                 </div>
                             </td>
                             <td>
-                                <button className="btn btn-info atmpt-btn">View</button>
+                                <button className="btn atmpt-btn">View</button>
                             </td>
                             <td></td>
                         

@@ -4,6 +4,8 @@ import Login from './Components/Login';
 import Footer from './Components/Footer';
 import Instructions from './Components/Instructions';
 import Questions from './Components/Question';
+import Submissions from './Components/Submission';
+import Leaderboard from './Components/Leaderboard';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
                   <Route exact path="/"><Login /></Route>
                   <Route path="/Instructions"><Instructions /></Route>
                   <Route path="/Questions"><Questions /></Route>
+                  <Route path='/Submissions'><Submissions /></Route>
+                  <Route path='/Leaderboard'><Leaderboard /></Route>
               </Switch>
             </div>
 

@@ -6,23 +6,16 @@
 }
 body{
   background:linear-gradient(to right, #001122 0%,#26A69A 100%);
-  overflow:hidden;
+  overflow-x: hidden;
 }
 .ht{
   color:white;
+  font-weight: 900 !important;
+  font-size:32px !important;
 }
 .logo{
   height:40px;
   width:115px;
-}
-.nav-log{
-  height:45px;
-  width:80px;
-  margin:0px 10px;
-}
-.fa-copyright{
-  position: relative;
-  top:0.15vw;
 }
 .ctdlogo{
   height:150px;
@@ -59,12 +52,8 @@ body{
   top:0;
   left:0;
   right:0;
-  background-color: rgba(0,0,0,0.7);
-}
-.ht{
-  color:white !important;
-  font-weight: 900 !important;
-  font-size: 20px !important;
+  background-color: rgba(0,0,0,0.9);
+  z-index:5;
 }
 .no{
   color:white !important;
@@ -118,16 +107,6 @@ margin-bottom:10px;
 .bts{
   font-size:20px;
   letter-spacing: 1px;
-}
-.footer{
-  position: absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  background:rgba(0,0,0,0.8);
-  color:white;
-  padding:20px;
-  text-align: center;
 }
 
 
@@ -217,7 +196,7 @@ margin-bottom:10px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 .bg-bubbles li:nth-child(10) {
-  left: 90%;
+  left: 77%;
   width: 160px;
   height: 160px;
   -webkit-animation-delay: 11s;
@@ -228,7 +207,7 @@ margin-bottom:10px;
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-700px) rotate(600deg);
+    transform: translateY(-1200px) rotate(600deg);
   }
 }
 @keyframes square {
@@ -236,7 +215,7 @@ margin-bottom:10px;
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-700px) rotate(600deg);
+    transform: translateY(-1200px) rotate(600deg);
   }
 }
 

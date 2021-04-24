@@ -1,9 +1,14 @@
+import './css/footer.css';
+
 const Footer = () => {
     return ( 
-        
-        <div className="footer">
-            <i class="fa fa-copyright" aria-hidden="true"></i> PICT IEEE STUDENT BRANCH Web Team
-        </div>
+        <>
+        <div className="pad" style={{padding:"5%"}}></div>
+        <footer className="footer fixed-bottom">
+            &copy; PICT IEEE STUDENT BRANCH
+        </footer>
+
+        </>
         
      );
 }
