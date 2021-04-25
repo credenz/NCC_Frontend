@@ -4,6 +4,22 @@
   margin:0;
   font-family:"Quicksand";
 }
+::-webkit-scrollbar{
+  width: 10px;
+  border-radius: 1px;
+  background: #003e3f;
+}
+::-webkit-scrollbar-track{
+ background:transparent ;
+ border: 2px solid darkslategray;
+ border-radius: 4px;
+
+} 
+::-webkit-scrollbar-thumb{
+  width: 24px;
+  background: #003546;
+  border-radius: 8px; 
+ }
 body{
   background:linear-gradient(to right, #001122 0%,#26A69A 100%);
   overflow-x: hidden;

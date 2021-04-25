@@ -6,6 +6,7 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/ext-beautify";
 import {Dropdown,Form} from 'react-bootstrap';
 const Coding = () => {
     return ( 
@@ -14,13 +15,13 @@ const Coding = () => {
                 <div className="col-12 col-md-6">
                     <div className="container left-side">
                         <div className="score-div d-flex mb-3">
-                            <table className="score" style={{color:"white"}}>
+                            <table className="score">
                                 <tr>
-                                    <td>Score : 500 </td>
+                                    <td>Score : {400} </td>
                                 </tr>
                             </table>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="outline-info" id="dropdown-basic">
+                            <Dropdown className="que-no d-flex ml-auto">
+                                <Dropdown.Toggle variant="info" id="dropdown-basic">
                                     Questions
                                 </Dropdown.Toggle>
 
@@ -36,28 +37,8 @@ const Coding = () => {
                         </div>
                         
                         <div className="card que-card">
-                            <div className="card-header que-no text-center align-items-center">
+                            <div className="card-header text-center align-items-center">
                                 <h5>Problem Statement</h5>
-                                {/*<ul class="nav justify-content-center text-center">
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Q1</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Q2</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Q3</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Q4</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Q5</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">Q6</a>
-                                    </li>
-                                </ul>*/}
                             </div>
                             <div className="card-body que-body" id="scroll">
                                 
@@ -125,10 +106,10 @@ const Coding = () => {
 
                 </div>
 
-                <div className="wrapper-container right-side">
+                <div className="wrapper-container right-side ml-5">
                     <div className="lang d-flex mb-2"> 
                             <Dropdown>
-                                <Dropdown.Toggle variant="outline-info" id="dropdown-basic">
+                                <Dropdown.Toggle variant="info" id="dropdown-basic">
                                     Select Language
                                 </Dropdown.Toggle>
 
@@ -139,22 +120,22 @@ const Coding = () => {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            <Form>
-                                <Form.Group>
+                            <Form className="d-flex ml-auto">
+                                <Form.Group className="file">
                                     <Form.File id="exampleFormControlFile1"/>
                                 </Form.Group>
                             </Form>
                     </div>
                     
                     <div className="code-editor">
-                        <AceEditor mode="python" theme="monokai" className="editor"></AceEditor>
+                        <AceEditor mode="python" theme="monokai" className="editor" placeholder="Type your code here"></AceEditor>
                     </div>
 
                     <div className="buttons d-flex mt-4 mb-3">
-                        <button className="btn btn-info">Clear</button>
-                        <button className="btn btn-info">Load Buffer</button>
+                        <button className="btn btn-info ml-5">Clear</button>
+                        <button className="btn btn-info ml-5">Load Buffer</button>
                         <button className="btn btn-info ml-5">Run Code</button>
-                        <button className="btn btn-info">Submit</button>
+                        <button className="btn btn-info ml-5">Submit</button>
                     </div>
 
                     <span className="console-txt" style={{color:"white"}}>
@@ -162,7 +143,7 @@ const Coding = () => {
                     </span>
 
                     <div className="console" style={{color:"white"}}>
-                        <textarea className="card custom-area" readOnly id="scroll">Warning !</textarea>
+                        <textarea className="card custom-area" readOnly id="scroll-con">Warning !</textarea>
                     </div>
 
                 </div>
