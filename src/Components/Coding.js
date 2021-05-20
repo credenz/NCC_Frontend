@@ -8,6 +8,7 @@ import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
 import "ace-builds/src-noconflict/ext-beautify";
 import {Dropdown,Form} from 'react-bootstrap';
+
 const Coding = () => {
     return ( 
         <div className="container-fluid">
@@ -99,13 +100,13 @@ const Coding = () => {
                             <h6>Custom Input</h6>
                         </span>
 
-                        <div className="custom-input">
+                        <div className="custom-input mt-3">
                         <textarea className="card custom-area"></textarea>
                         </div>
                     </div>
 
                 </div>
-
+                <div className="col-12 col-md-6">
                 <div className="wrapper-container right-side ml-5">
                     <div className="lang d-flex mb-2"> 
                             <Dropdown>
@@ -131,7 +132,7 @@ const Coding = () => {
                         <AceEditor mode="python" theme="monokai" className="editor" placeholder="Type your code here"></AceEditor>
                     </div>
 
-                    <div className="buttons d-flex mt-4 mb-3">
+                    <div className="buttons d-flex mt-4 mb-4">
                         <button className="btn btn-info ml-5">Clear</button>
                         <button className="btn btn-info ml-5">Load Buffer</button>
                         <button className="btn btn-info ml-5">Run Code</button>
@@ -146,6 +147,7 @@ const Coding = () => {
                         <textarea className="card custom-area" readOnly id="scroll-con">Warning !</textarea>
                     </div>
 
+                </div>
                 </div>
             </div>
         </div>

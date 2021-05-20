@@ -1,10 +1,12 @@
 import {Link} from 'react-router-dom';
 import Logout from './Logout';
+import Timer from './Timer/Timer';
 
 const Navbar = () =>{
     return (
         <nav className="navbar navbar-expand-sm justify-content-right nbt">
-            <h3 className="ht">NCC</h3>
+           <img className="ncc" src="../img/NCC_21.png" />
+            
             <button className="navbar-toggler navbar-dark " type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon navbar-dark" />
             </button>

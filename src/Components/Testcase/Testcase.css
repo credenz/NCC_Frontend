@@ -1,0 +1,47 @@
+.console-label, .scoreandstatus{
+    text-align: center;
+    background: -webkit-linear-gradient(#53e3a6,#fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+.console-label{
+  width: 100%;
+  margin-top:-2vw;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.scoreandstatus{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-top: 10vh;
+}
+.consoles{
+    box-shadow: 4px 4px 8px 8px rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2) !important;
+    background-image: linear-gradient(to right,#003e3f,#001122) !important;
+    border: none;
+    overflow-y: auto;
+    outline: none;
+    color:#fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
+    padding:15px;
+    
+}
+.consoles:focus {
+    border: none !important;
+    outline: 0 !important;
+    color:#fff;
+
+}
+
+@media(max-width:425px){
+   .console-label{
+       margin-bottom:5vw;
+   }
+   .scoreandstatus{
+       margin-bottom: 10vw;
+   }
+}

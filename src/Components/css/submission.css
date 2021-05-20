@@ -1,7 +1,61 @@
 .sub-card{
-    height:17vw;
-    width:17vw;
-    background-color: darkgrey;
-    margin-left:3vw;
+    height:10vw;
+    width:70vw;
+    background: linear-gradient(to right,#003e3f,#001122);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    margin-left:15%;
     margin-top:2vw;
+    color:white;
+}
+.view{
+    width:10vw;
+    height:3vw;
+    background-color: #26A69A !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    font-size:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.view:hover{
+    box-shadow: none;
+    transform: scale(1.03);
+}
+.progress-bar{
+    background-color: #26A69A !important;
+    color:black;
+    text-align: center;
+}
+.progress{
+    display: flex;
+    width:20vw;
+    margin-left:20%;
+    margin-top:-0.1vw;
+}
+.info{
+    color:white;
+}
+
+@media(max-width:425px){
+    .sub-card{
+        height:30vw;
+        width:90vw;
+        margin-left:2vw;
+        margin-top:10vw;
+    }
+    .view{
+        width:20vw;
+        height:8vw;
+    }
+    .progress{
+        height:8vw;
+        width:25vw;
+        margin-left:-5vw;
+        margin-top:-3vw;
+    }
+    .time{
+        text-align: left;
+      
+    }
 }

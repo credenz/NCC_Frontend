@@ -1,0 +1,52 @@
+.resultcard{
+    /* height: 500px;*/
+    width: 350px; 
+    height: 140px;
+    margin-top:4vh;
+    text-align: center;
+    z-index: -1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to right,#003e3f,#001122);
+}
+.resultpage{
+    margin-top:-3vw;
+}
+.svgs{
+    width: 180px;
+    height: 180px;
+    color: white;
+}
+.svg-down{
+    margin-top: 20vh;
+}
+.svg-rank{
+    color: white;
+    text-align: center;
+}
+.res-text{
+    background: -webkit-linear-gradient(#53e3a6,#fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent; 
+    margin: 30px;
+}
+@media only screen and (max-width: 600px) {
+    .resultcard{
+        /* height: 400px;
+        width: 280px;
+        margin-bottom: 4vh;       */
+        height: 120px;
+        width: 280px;
+        margin-left: 18vw;
+        margin-top:10vw;
+        
+    }
+    .res-text{
+        margin: 20px;
+    }
+    .svg-down{
+        margin-top: 2vh;
+    }
+    .bronze{
+        margin-bottom: 70px;
+    }
+}
