@@ -7,44 +7,38 @@ class login extends Component{
         this.state = {
             username : '',
             password : ''
+        
         }
     }
+    
 
     handleUsernameChange = (event) => {
         this.setState({
             username : event.target.value
+        
         })
-
+        
     }
 
     handlePasswordChange = (event) => {
         this.setState({
             password : event.target.value
         })
+        
     }
+
 
     handleSubmit = (event) => {
         event.preventDefault();
-    }
+        }
+
+        
 
     render(){
         return ( 
     
             <div className="form-box">
-                <div className="background">
-                    <ul className="bg-bubbles">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
+                
                 <div className="head-form">
                     <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
                 </div>
@@ -70,8 +64,8 @@ class login extends Component{
          );
 
     }
-}
 
+}
 
    
 
