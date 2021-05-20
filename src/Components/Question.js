@@ -15,39 +15,43 @@ const Questions = () => {
 
     return ( 
         <div className="row">
-            <Table responsive borderless className="tab-head">
-                <thead>
-                    <tr className="head">
-                    <th></th>
-                    <th>Q.No</th>
-                    <th>Submissions</th>
-                    <th>Accuracy</th>
-                    <th>Attempt</th>
-                    <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    {ques.map((ques) => (
-                        <tr key={ques.id} className="elements">
-                            <td></td>
-                            <td>{ques.qno}</td>
-                            <td>{ques.submit}</td>
-                            <td>
-                                <div>
-                                <ProgressBar variant="success" now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
-                                </div>
-                            </td>
-                            <td>
-                                <button className="btn atmpt-btn">View</button>
-                            </td>
-                            <td></td>
-                        
+            <div className="col-8 col-sm-12">
+                <Table borderless className="tab-head">
+                    <thead>
+                        <tr className="head">
+                        <th></th>
+                        <th>Q.No</th>
+                        <th>Submissions</th>
+                        <th>Accuracy</th>
+                        <th>Attempt</th>
+                        <th></th>
                         </tr>
-                    ))} 
-                    
-                </tbody>
-            </Table> 
+                    </thead>
+
+                    <tbody>
+                        
+                        {ques.map((ques) => (
+                            <tr key={ques.id} className="elements">
+                                <td></td>
+                                <td>{ques.qno}</td>
+                                <td>{ques.submit}</td>
+                                <td>
+                                    <div>
+                                    <ProgressBar variant="custom" now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
+                                    </div>
+                                </td>
+                                <td>
+                                    <button className="btn atmpt-btn">View</button>
+                                </td>
+                                <td></td>
+                            
+                            </tr>
+                        ))} 
+                        
+                    </tbody>
+                </Table>
+            
+            </div> 
         </div>
      );
 }

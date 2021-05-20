@@ -61,7 +61,7 @@
     position: relative;
     height:5vw;
     padding: 1.3vw;
-    border-top:1 px solid #adadad;
+    border-top:1px solid #adadad;
     text-align: center;
     color:white;
 }
@@ -136,10 +136,10 @@
 @media(max-width:425px){
     .inst-box{
         position: absolute;
-        top:25%;
-        left:-15%;
-        height:90vw;
-        width:70vw;
+        top:21%;
+        left:10%;
+        height:100vw;
+        width:80vw;
     }
     .inst-title{
         width:60vw;
@@ -151,12 +151,27 @@
     }
     .inst-content{
         display:flex;
+        font-size: 17px;
     }
     .pro{
-        position: relative;
-        top:75%;
-        left:30%;
         width:40vw;
+        left:30%;
+    }
+    .confirm{
+        height:max-content;
+        font-size: 14px;
+    }
+    .confirm > label input{
+        height:15px;
+        width:15px;
+        margin-right:2vw;
+        margin-top:1vw;
+        cursor:pointer;
+    }
+    .inst-foot{
+        position: absolute;
+        top:80%;
+        left:5%;
     }
     
     
