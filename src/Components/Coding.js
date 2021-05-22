@@ -11,6 +11,8 @@ import {Dropdown,Form} from 'react-bootstrap';
 
 
 const Coding = () => {
+
+   
     
     return ( 
         
@@ -112,7 +114,7 @@ const Coding = () => {
 
                 </div>
                 <div className="col-12 col-md-6">
-                <div className="wrapper-container right-side ml-5">
+                <div className="wrapper-container right-side ml-3">
                     <div className="lang d-flex mb-2"> 
                             <Dropdown>
                                 <Dropdown.Toggle variant="info" id="dropdown-basic">
@@ -126,22 +128,28 @@ const Coding = () => {
                                 </Dropdown.Menu>
                             </Dropdown>
 
-                            <Form className="d-flex ml-auto">
+                            <Form className="d-flex file-bod">
                                 <Form.Group className="file">
-                                    <Form.File id="exampleFormControlFile1"/>
+                                    <Form.File id="file-input"/>
                                 </Form.Group>
                             </Form>
                     </div>
                     
                     <div className="code-editor">
-                        <AceEditor mode="python" theme="monokai" className="editor" placeholder="Type your code here"></AceEditor>
+                        <AceEditor mode="python" theme="monokai" 
+                         className="editor"  placeholder="Type your code here"
+                         setOptions={{
+                            enableSnippets: true,
+                            showLineNumbers: true,
+                            tabSize: 4,
+                            }}></AceEditor>
                     </div>
 
                     <div className="buttons d-flex mt-4 mb-4">
-                        <button className="btn btn-info ml-5">Clear</button>
-                        <button className="btn btn-info ml-5">Load Buffer</button>
-                        <button className="btn btn-info ml-5">Run Code</button>
-                        <button className="btn btn-info ml-5">Submit</button>
+                        <button className="btn btn-info cbt">Clear</button>
+                        <button className="btn btn-info bt">Load Buffer</button>
+                        <button className="btn btn-info bt">Run Code</button>
+                        <button className="btn btn-info bt">Submit</button>
                     </div>
                     
                     <span className="console-txt" style={{color:"white"}}>
