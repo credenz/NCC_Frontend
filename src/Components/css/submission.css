@@ -59,3 +59,335 @@
       
     }
 }
+@media(max-width:1100px){
+    .sub-card{
+        height:11vw;
+        width:70vw;
+        margin:0 auto;
+        margin-top:2vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 2em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:-0vw;
+        bottom: 0em;
+        left: 5em;
+
+    }
+    .progress{
+        height:3vw;
+        width:20vw;
+        margin-left:-15vw;
+        margin-top:-1vw;
+        position: relative;
+        left: 4em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.5em;
+       
+      
+    }
+}
+
+@media(max-width:950px){
+    .sub-card{
+        height:11vw;
+        width:70vw;
+        margin:0 auto;
+        margin-top:2vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 1em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:-0vw;
+        bottom: 0em;
+        left: 2em;
+
+    }
+    .progress{
+        height:2vw;
+        width:20vw;
+        margin-left:-15vw;
+        margin-top:-1vw;
+        position: relative;
+        left: 2em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.5em;
+       
+      
+    }
+}
+
+@media(max-width:850px){
+    .sub-card{
+        height:15vw;
+        width:70vw;
+        margin:0 auto;
+        margin-top:2vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 1em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:0vw;
+        bottom: -0.2em;
+        left: 3em;
+
+    }
+    .progress{
+        height:3vw;
+        width:20vw;
+        margin-left:-15vw;
+        margin-top:-1vw;
+        position: relative;
+        left: 2em;
+    }
+    .time{
+
+        position: relative;
+        bottom: 0.5em;
+       
+      
+    }
+}
+
+@media(max-width:770px){
+    .sub-card{
+        height:15vw;
+        width:70vw;
+        margin:0 auto;
+        margin-top:2vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 1em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:-0vw;
+        bottom: 0em;
+        left: 2em;
+
+    }
+    .progress{
+        height:3vw;
+        width:22vw;
+        margin-left:-15vw;
+        margin-top:-1vw;
+        position: relative;
+        left: 2em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.7em;
+       
+      
+    }
+}
+@media(max-width:680px){
+    .sub-card{
+        height:17vw;
+        width:70vw;
+        margin:0 auto;
+        margin-top:3vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 1em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:-0vw;
+        bottom: 0em;
+        left: 1em;
+
+    }
+    .progress{
+        height:3vw;
+        width:20vw;
+        margin-left:-10vw;
+        position: relative;
+        left: 0.3em;
+        bottom: 0.2em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 1em;
+       
+      
+    }
+}
+
+@media(max-width:620px){
+    .sub-card{
+        height:19vw;
+        width:80vw;
+        margin:0 auto;
+        margin-top:4vw;
+        
+    }
+    .logo{
+        height: 2em;
+    }
+    .view{
+        width:10vw;
+        height: 1em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:-0vw;
+        bottom: 0em;
+        left: 1em;
+
+    }
+    .progress{
+        height:4vw;
+        width:25vw;
+        margin-left:-15vw;
+        margin-top:-1vw;
+        position: relative;
+        left: 2em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.8em;
+       
+      
+    }
+}
+@media(max-width:545px){
+    .sub-card{
+        height:22vw;
+        width:80vw;
+        margin:0 auto;
+        margin-top:4vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 0.8em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:-0vw;
+        bottom: 0em;
+        left: 0.4em;
+
+    }
+    .progress{
+        height:4vw;
+        width:25vw;
+        margin-left:-15vw;
+        margin-top:-0vw;
+        position: relative;
+        left: 0em;
+        bottom: 1em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.8em;
+        left: -0.8em;
+       
+      
+    }
+}
+@media(max-width:450px){
+    .sub-card{
+        height:27vw;
+        width:80vw;
+        margin:0 auto;
+        margin-top:10vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 0em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:0vw;
+        bottom: 0em;
+        left: 0.4em;
+
+    }
+    .progress{
+        height:4vw;
+        width:25vw;
+        margin-left:-15vw;
+        margin-top:-0vw;
+        position: relative;
+        left: 0em;
+        bottom: 1em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.8em;
+        left: -0.8em;
+        font-size: 0.8em;
+       
+      
+    }
+}
+@media(max-width:360px){
+    .sub-card{
+        height:35vw;
+        width:80vw;
+        margin:0 auto;
+        margin-top:8vw;
+        
+    }
+    .view{
+        width:10vw;
+        height: 0em;
+        position: relative;
+        margin-left:-5vw;
+        margin-top:0vw;
+        bottom: 0em;
+        left: 0.4em;
+        font-size: 0.8em;;
+
+    }
+    .progress{
+        height:4vw;
+        width:25vw;
+        margin-left:-15vw;
+        margin-top:-0vw;
+        position: relative;
+        left: 0em;
+        bottom: 0.5em;
+    }
+    .time{
+        text-align: left;
+        position: relative;
+        bottom: 0.8em;
+        left: -1.3em;
+        font-size: 0.6em;
+       
+      
+    }
+}
+@media(max-width:360px){
+    .sub-card{
+        height:35vw;
+        width:80vw;
+        margin:0 auto;
+        margin-top:10vw;
+        
+    }
+    
+}

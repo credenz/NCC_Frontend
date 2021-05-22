@@ -9,8 +9,13 @@ import "ace-builds/src-noconflict/ext-searchbox";
 import "ace-builds/src-noconflict/ext-beautify";
 import {Dropdown,Form} from 'react-bootstrap';
 
+
 const Coding = () => {
+    
     return ( 
+        
+        
+
         <div className="container-fluid">
             <div className="row mx-auto">
                 <div className="col-12 col-md-6">
@@ -138,7 +143,7 @@ const Coding = () => {
                         <button className="btn btn-info ml-5">Run Code</button>
                         <button className="btn btn-info ml-5">Submit</button>
                     </div>
-
+                    
                     <span className="console-txt" style={{color:"white"}}>
                             <h6>Console</h6>
                     </span>
@@ -146,12 +151,15 @@ const Coding = () => {
                     <div className="console" style={{color:"white"}}>
                         <textarea className="card custom-area" readOnly id="scroll-con">Warning !</textarea>
                     </div>
-
+                    
                 </div>
                 </div>
             </div>
         </div>
+
+        
      );
+     
 }
  
 export default Coding;

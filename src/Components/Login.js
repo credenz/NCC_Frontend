@@ -36,31 +36,40 @@ class login extends Component{
 
     render(){
         return ( 
-    
-            <div className="form-box">
+    <div class="container">
+        <div class='row'>
+            <div class="col-md-4"></div>
+            <div class='col-md-4'>
+                <div className="form-box">
+                    
+                    <div className="head-form">
+                        <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
+                    </div>
+                    <div className="body-form">
+                            <form onSubmit={this.handleSubmit}>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><i class="fa fa-user"></i></span>
+                                    </div>
+                                    <input type="text" className="form-control txt" placeholder="Username" value={this.state.username} onChange={this.handleUsernameChange} />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text"><i class="fa fa-lock"></i></span>
+                                    </div>
+                                    <input type="password" className="form-control txt" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/>
+                                </div>
+                                    <button type="submit" className="btn btn-info btn-block bts">Login</button>
+                            </form>
+                    </div>
                 
-                <div className="head-form">
-                    <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
                 </div>
-                <div className="body-form">
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i class="fa fa-user"></i></span>
-                                </div>
-                                <input type="text" className="form-control txt" placeholder="Username" value={this.state.username} onChange={this.handleUsernameChange} />
-                            </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text"><i class="fa fa-lock"></i></span>
-                                </div>
-                                <input type="password" className="form-control txt" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/>
-                            </div>
-                                <button type="submit" className="btn btn-info btn-block bts">Login</button>
-                        </form>
-                </div>
+            </div>
+            <div class="col-md-4">
             
+            </div>
         </div>
+    </div>
          );
 
     }
