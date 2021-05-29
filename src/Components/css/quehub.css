@@ -5,6 +5,8 @@
    border-radius: 5px;
    text-align: center;
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+   place-content: center;
+   place-items: center;
 }
 .head{
     height:4vw;
@@ -44,8 +46,20 @@
 
 @media(max-width:425px){
     .tab-head{
-        margin-top:45%;
-        width:50vw !important;
+        margin-top:50%;
+        margin-left:2%;
+        width:80vw !important;
+    }
+    .submission{
+        display: none;
+    }
+    .atmpt-btn{
+        width:15vw;
+    }
+    .progress{
+        margin-left:2vw;
+        margin-top:3vw;
+        height:5vw;
     }
 }
 

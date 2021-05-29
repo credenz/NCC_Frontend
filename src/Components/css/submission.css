@@ -27,7 +27,7 @@
     color:black;
     text-align: center;
 }
-.progress{
+.progress1{
     display: flex;
     width:20vw;
     margin-left:20%;
@@ -36,6 +36,30 @@
 .info{
     color:white;
 }
+.paginate {
+    margin-left:35vw;
+    outline: none;
+    color:white;
+    list-style: none;
+    outline: none;
+    display: flex;
+    height:4vh;
+   }
+    
+   .paginate>.active>a {
+    background-image: linear-gradient(#53e3a6,#003546);
+    color:white;
+   }
+    
+   .paginate>li>a {
+    padding: 10px 15px !important;
+    outline: none;
+    cursor: pointer;
+   }
+   
+   .paginate>li>a, .pagination>li>span {
+    background-image: linear-gradient(to top right, #152238  0%, #031025 100%);
+   }
 
 @media(max-width:425px){
     .sub-card{
@@ -45,18 +69,31 @@
         margin-top:10vw;
     }
     .view{
-        width:20vw;
-        height:8vw;
+        width:15vw !important;
+        height:7vw !important;
+        margin-top:-1vw !important;
     }
-    .progress{
+    .progress1{
         height:8vw;
         width:25vw;
-        margin-left:-5vw;
-        margin-top:-3vw;
+        margin-left:2vw;
     }
     .time{
-        text-align: left;
-      
+        text-align: left; 
+        font-size:15px !important;
+    }
+    .paginate{
+        margin-left:2vw ;
+        margin-top:13vw; 
+    }
+    .paginate>li>a {
+        padding: 6px 12px!important;
+    }
+}
+
+@media(max-width:375px){
+    .paginate>li>a {
+        padding: 4px 8px;
     }
 }
 @media(max-width:1100px){
@@ -77,7 +114,7 @@
         left: 5em;
 
     }
-    .progress{
+    .progress1{
         height:3vw;
         width:20vw;
         margin-left:-15vw;
@@ -112,7 +149,7 @@
         left: 2em;
 
     }
-    .progress{
+    .progress1{
         height:2vw;
         width:20vw;
         margin-left:-15vw;
@@ -147,7 +184,7 @@
         left: 3em;
 
     }
-    .progress{
+    .progress1{
         height:3vw;
         width:20vw;
         margin-left:-15vw;
@@ -182,7 +219,7 @@
         left: 2em;
 
     }
-    .progress{
+    .progress1{
         height:3vw;
         width:22vw;
         margin-left:-15vw;
@@ -216,7 +253,7 @@
         left: 1em;
 
     }
-    .progress{
+    .progress1{
         height:3vw;
         width:20vw;
         margin-left:-10vw;
@@ -254,7 +291,7 @@
         left: 1em;
 
     }
-    .progress{
+    .progress1{
         height:4vw;
         width:25vw;
         margin-left:-15vw;
@@ -288,7 +325,7 @@
         left: 0.4em;
 
     }
-    .progress{
+    .progress1{
         height:4vw;
         width:25vw;
         margin-left:-15vw;
@@ -324,7 +361,7 @@
         left: 0.4em;
 
     }
-    .progress{
+    .progress1{
         height:4vw;
         width:25vw;
         margin-left:-15vw;
@@ -362,7 +399,7 @@
         font-size: 0.8em;;
 
     }
-    .progress{
+    .progress1{
         height:4vw;
         width:25vw;
         margin-left:-15vw;
@@ -376,18 +413,19 @@
         position: relative;
         bottom: 0.8em;
         left: -1.3em;
-        font-size: 0.6em;
-       
-      
+        font-size: 0.6em; 
     }
+    .paginate{
+        margin-left:-5vw !important;
+    }
+
 }
 @media(max-width:360px){
     .sub-card{
         height:35vw;
         width:80vw;
         margin:0 auto;
-        margin-top:10vw;
-        
+        margin-top:10vw;   
     }
     
 }

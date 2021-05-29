@@ -2,6 +2,7 @@
     /* height: 500px;*/
     width: 350px; 
     height: 140px;
+    border-radius: 0.5vw 3vw;
     margin-top:4vh;
     text-align: center;
     z-index: -1;
@@ -25,10 +26,66 @@
 }
 .res-text{
     background: -webkit-linear-gradient(#53e3a6,#fff);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color:transparent; 
     margin: 30px;
 }
+.alert{
+    text-align: center;
+}
+/* check animation*/
+
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+    stroke: green;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+  }
+  
+  .checkmark {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right:2vw;
+    stroke-width: 3;
+    stroke: green;
+    stroke-miterlimit: 10;
+    box-shadow: inset 0px 0px 0px #7ac142;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+  }
+  
+  .checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+  }
+  
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes scale {
+    0%, 100% {
+      transform: none;
+    }
+    50% {
+      transform: scale3d(1.5, 1.5, 1);
+    }
+  }
+  @keyframes fill {
+    100% {
+      box-shadow: inset 0px 0px 0px 50px whitesmoke;
+    }
+  }
+
+  
+
+
 @media only screen and (max-width: 600px) {
     .resultcard{
         /* height: 400px;

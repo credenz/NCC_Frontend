@@ -11,7 +11,7 @@ const TitleLeader = () => {
                     <p className="datauser tuser">Username</p>
                 </td>
                 <td colSpan="6" >
-                    <p className="data">Questions</p>
+                    <p className="data">Question</p>
                 </td>
                 <td rowSpan="2">
                     <p className="datascore tscore">Total Score</p>

@@ -21,7 +21,7 @@ const Questions = () => {
                         <tr className="head">
                         <th></th>
                         <th>Q.No</th>
-                        <th>Submissions</th>
+                        <th className="submission">Submissions</th>
                         <th>Accuracy</th>
                         <th>Attempt</th>
                         <th></th>
@@ -34,10 +34,10 @@ const Questions = () => {
                             <tr key={ques.id} className="elements">
                                 <td></td>
                                 <td>{ques.qno}</td>
-                                <td>{ques.submit}</td>
+                                <td className="submission">{ques.submit}</td>
                                 <td>
                                     <div>
-                                    <ProgressBar variant="custom" now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
+                                    <ProgressBar variant="custom" animated now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
                                     </div>
                                 </td>
                                 <td>

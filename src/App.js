@@ -9,6 +9,7 @@ import Leaderboard from './Components/Leaderboard/Leaderboard';
 import Coding from './Components/Coding';
 import Result from './Components/Result/Result';
 import Testcase from './Components/Testcase/Testcase';
+import Error from './Components/Error/error';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                   <Route path='/Result'><Result /></Route>
                   <Route path='/Testcase'><Testcase /></Route>
                   <Route path='/Leaderboard'><Leaderboard /></Route>
+                  <Route path='/Error'><Error /></Route>
                   
               </Switch>
             </div>

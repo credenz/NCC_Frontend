@@ -8,16 +8,16 @@ import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
 import "ace-builds/src-noconflict/ext-beautify";
 import {Dropdown,Form} from 'react-bootstrap';
+import {useState} from 'react';
 
 
 const Coding = () => {
 
-   
+    const [language, setLanguage] = useState('python');
+    const [question, setQuestion] = useState('q1');
     
     return ( 
-        
-        
-
+           
         <div className="container-fluid">
             <div className="row mx-auto">
                 <div className="col-12 col-md-6">
@@ -28,20 +28,15 @@ const Coding = () => {
                                     <td>Score : {400} </td>
                                 </tr>
                             </table>
-                            <Dropdown className="que-no d-flex ml-auto">
-                                <Dropdown.Toggle variant="info" id="dropdown-basic">
-                                    Questions
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Q.1</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Q.2</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Q.3</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-4">Q.4</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-5">Q.5</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-6">Q.6</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <select id="dropdown-basic" class="bg-info ml-auto que-no" value={question} onChange={e => setQuestion(e.target.value)}>
+                                    <option class="bg-light opt" value="q1">Q.1</option>
+                                    <option class="bg-light opt" value="q2">Q.2</option>
+                                    <option class="bg-light opt" value="q3">Q.3</option>
+                                    <option class="bg-light opt" value="q4">Q.4</option>
+                                    <option class="bg-light opt" value="q5">Q.5</option>
+                                    <option class="bg-light opt" value="q6">Q.6</option>
+                                    
+                                </select>
                         </div>
                         
                         <div className="card que-card">
@@ -115,32 +110,32 @@ const Coding = () => {
                 </div>
                 <div className="col-12 col-md-6">
                 <div className="wrapper-container right-side ml-3">
-                    <div className="lang d-flex mb-2"> 
-                            <Dropdown>
-                                <Dropdown.Toggle variant="info" id="dropdown-basic">
-                                    Select Language
-                                </Dropdown.Toggle>
+                    <div className="lang d-flex"> 
+                            
+                                <select id="dropdown-basic" class="bg-info" value={language} onChange={e => setLanguage(e.target.value)}>
+                                    <option class="bg-light opt" value="c">C</option>
+                                    <option class="bg-light opt" value="cpp">C++</option>
+                                    <option class="bg-light opt" value="python">Python</option>
+                                </select>
 
-                                <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">C</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">C++</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Python</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-
-                            <Form className="d-flex file-bod">
+                            <Form className="d-flex file-bod ml-auto mr-3">
                                 <Form.Group className="file">
-                                    <Form.File id="file-input"/>
+                                    <Form.File id="file-input" name="file-input" hidden/>
+                                    <label for="file-input" class="inp">Choose File</label>
                                 </Form.Group>
                             </Form>
                     </div>
                     
                     <div className="code-editor">
                         <AceEditor mode="python" theme="monokai" 
-                         className="editor"  placeholder="Type your code here"
+                         className="editor"  placeholder="Type your code here" showPrintMargin={false}
+                         showGutter={true}
+                         onChange={(value, stat) => {
+                            console.log("onChange", value, stat);
+                        }}
                          setOptions={{
                             enableSnippets: true,
-                            showLineNumbers: true,
+                            showLineNumbers: true, 
                             tabSize: 4,
                             }}></AceEditor>
                     </div>

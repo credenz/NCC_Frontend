@@ -3,6 +3,7 @@ import Logout from './Logout';
 import Timer from './Timer/Timer';
 
 const Navbar = () =>{
+    
     return (
         <nav className="navbar navbar-expand-sm justify-content-right nbt">
            <img className="ncc" src="../img/NCC_21.png" />
