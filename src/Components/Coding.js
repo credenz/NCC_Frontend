@@ -7,15 +7,23 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
 import "ace-builds/src-noconflict/ext-beautify";
-import {Dropdown,Form} from 'react-bootstrap';
-import {useState} from 'react';
+import { Dropdown, Form } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axiosInstance from '../axios';
 
 
 const Coding = () => {
 
-    const [language, setLanguage] = useState('python');
+    const { id } = useParams();
+
+    const [language, setLanguage] = useState('py');
     const [question, setQuestion] = useState('q1');
     
+    useEffect(() => {
+        
+    })
+
     return ( 
            
         <div className="container-fluid">

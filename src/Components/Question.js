@@ -1,17 +1,27 @@
 import './css/quehub.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Table} from 'react-bootstrap';
 import {ProgressBar} from 'react-bootstrap';
+import axiosInstance from '../axios';
 
 const Questions = () => {
-    const [ques, setQues] = useState([
-        {id:0, qno:1, submit:Math.floor(Math.random()*100)},
-        {id:1, qno:2, submit:Math.floor(Math.random()*100)},
-        {id:2, qno:3, submit:Math.floor(Math.random()*100)},
-        {id:3, qno:4, submit:Math.floor(Math.random()*100)},
-        {id:4, qno:5, submit:Math.floor(Math.random()*100)},
-        {id:5, qno:6, submit:Math.floor(Math.random()*100)}
-    ]);
+
+    const [ques, setQues] = useState([]);
+
+    useEffect(() => {
+        axiosInstance.get('questionhub/').then((res) => {
+            const allQuestions = res.data;
+            setQues([
+                { id: allQuestions[0].pk, qno: 1, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[0].pk, qno: 2, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[0].pk, qno: 3, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[0].pk, qno: 4, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[0].pk, qno: 5, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[0].pk, qno: 6, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+            ]);
+            console.log(res.data);
+        });
+    }, [setQues]);
 
     return ( 
         <div className="row">
@@ -37,7 +47,7 @@ const Questions = () => {
                                 <td className="submission">{ques.submit}</td>
                                 <td>
                                     <div>
-                                    <ProgressBar variant="custom" animated now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
+                                    <ProgressBar variant="custom" animated now={ques.progress} className="progress"label={`${ques.progress}%`}  />
                                     </div>
                                 </td>
                                 <td>
