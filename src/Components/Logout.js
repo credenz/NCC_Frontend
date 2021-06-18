@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, Modal } from 'react-bootstrap';
 import { logout } from './utils/index';
 import './css/logout.css';
+import axiosInstance from '../axios';
 
 const Logout = () => {
 
@@ -11,10 +12,18 @@ const Logout = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [userDatas, setUserDatas] = useState(0);
+
+  useEffect(() => {
+    axiosInstance.get('userstats/').then((res) => {
+      setUserDatas(res.data);
+      console.log(res.data);
+    })
+  }, [setUserDatas])
 
   const handleYes = () => {
-    logout();
-    history.push('result/');
+    history.push('/result', userDatas);
+    handleClose();
   }
 
     return (

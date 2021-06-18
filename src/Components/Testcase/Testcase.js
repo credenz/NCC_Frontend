@@ -3,9 +3,12 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import "./Testcase.css";
 import TestcaseCard from "./TestcaseCard";
 
-const Testcase = () => {
-  const List1 = [1, 2, 3].map((num) => <TestcaseCard val={num} />);
-  const List2 = [4, 5, 6].map((num) => <TestcaseCard val={num}/>);
+const Testcase = (props) => {
+
+  const resultData = props.location.state;
+
+  const List1 = [1, 2, 3].map((num) => <TestcaseCard val={num} status={[resultData.test_case_status[0], resultData.test_case_status[1], resultData.test_case_status[2]]}/>);
+  const List2 = [4, 5, 6].map((num) => <TestcaseCard val={num} status={[resultData.test_case_status[3], resultData.test_case_status[4], resultData.test_case_status[2]]}/>);
 
   return (
     <Container fluid>
@@ -14,8 +17,8 @@ const Testcase = () => {
           <Row className="justify-content-center">{List1}</Row>
           <Row className="justify-content-center">{List2}</Row>
           <Row >
-            <Col className="scoreandstatus">Your score</Col>
-            <Col className="scoreandstatus">Status</Col>
+            <Col className="scoreandstatus">Your score : {resultData.submission_score}</Col>
+            <Col className="scoreandstatus">Status : {resultData.status}</Col>
           </Row>
         </Col>
         <Col lg={4}>
@@ -23,7 +26,7 @@ const Testcase = () => {
             <Form style={{ width: "70%"}}>
           <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label className="console-label">Console</Form.Label>
-          <Form.Control as="textarea" rows={15} className="consoles" readOnly value="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type  specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with deskto specimen book. It has survived not only five centuries. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" />
+          <Form.Control as="textarea" rows={15} className="consoles" readOnly value={ resultData.status + "\n" + resultData.console_out } />
         </Form.Group>
         </Form>
           </Row>

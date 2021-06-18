@@ -7,22 +7,77 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
 import "ace-builds/src-noconflict/ext-beautify";
-import { Dropdown, Form } from 'react-bootstrap';
+import { Container, Form, Row, Col, Button } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import axiosInstance from '../axios';
 
 
 const Coding = () => {
 
     const { id } = useParams();
+    const history = useHistory();
 
     const [language, setLanguage] = useState('py');
-    const [question, setQuestion] = useState('q1');
+    const [question, setQuestion] = useState([
+        {question_desc: 'loading...'},
+        {question_desc: 'loading...'},
+        {question_desc: 'loading...'},
+        {question_desc: 'loading...'},
+        {question_desc: 'loading...'},
+        {question_desc: 'loading...'}
+    ]);
+    const [code, setCode] = useState(0);
+    let [consoleResponse, setConsoleResponse] = useState({status: "Console", output: ""});
+    let [customInput, setCustomInput] = useState("");
+    const [userDatas, setUserDatas] = useState(0);
     
     useEffect(() => {
-        
-    })
+        axiosInstance.get('codingpage/').then((res) => {
+            const questions = res.data;
+            setQuestion(questions);
+            console.log(res.data);
+        });
+    }, [setQuestion]);
+
+    useEffect(() => {
+        axiosInstance.get('userstats/').then((res) => {
+            setUserDatas(res.data);
+            console.log(userDatas);
+        })
+    }, [setUserDatas]);
+
+    const handleCodeSubmit = (e) => {
+        console.log(code);
+        axiosInstance
+            .post('codesubmit/',{
+                qno: id,
+                lang: language,
+                code: code
+            })
+            .then((res) => {
+                console.log(res.data);
+                setConsoleResponse(res.data.console_out);
+                history.push('/testcase', res.data)
+            })
+    }
+
+    const handleRunCode = (e) => {
+        axiosInstance
+            .post('coderun/', {
+                qno: id,
+                code: code,
+                lang: language,
+                ici: true,
+                ci: customInput,
+            })
+            .then((res) => {
+                console.log(res.data);
+                setConsoleResponse(res.data);
+                console.log(consoleResponse);
+            });
+    }
 
     return ( 
            
@@ -33,10 +88,10 @@ const Coding = () => {
                         <div className="score-div d-flex mb-3">
                             <table className="score">
                                 <tr>
-                                    <td>Score : {400} </td>
+                                    <td>Score : {userDatas.totalScore} </td>
                                 </tr>
                             </table>
-                            <select id="dropdown-basic" class="bg-info ml-auto que-no" value={question} onChange={e => setQuestion(e.target.value)}>
+                            {/* <select id="dropdown-basic" class="bg-info ml-auto que-no" value={question} onChange={e => setQuestion(e.target.value)}>
                                     <option class="bg-light opt" value="q1">Q.1</option>
                                     <option class="bg-light opt" value="q2">Q.2</option>
                                     <option class="bg-light opt" value="q3">Q.3</option>
@@ -44,7 +99,7 @@ const Coding = () => {
                                     <option class="bg-light opt" value="q5">Q.5</option>
                                     <option class="bg-light opt" value="q6">Q.6</option>
                                     
-                                </select>
+                                </select> */}
                         </div>
                         
                         <div className="card que-card">
@@ -54,20 +109,9 @@ const Coding = () => {
                             <div className="card-body que-body" id="scroll">
                                 
                                 <div className="question mb-5">
-                                    Ashley loves primes!
-                                    She gives you T testcases.<br />
-                                    In each testcase you are given two space separated integers L and R. You have to print the number of
-                                    primes in range L to R(both included).<br />
-                                    Ashley loves primes!<br />
-                                    She gives you T testcases.<br />
-                                    In each testcase you are given two space separated integers L and R. You have to print the number of
-                                    primes in range L to R(both included).<br />
-                                    Ashley loves primes!<br />
-                                    She gives you T testcases.<br />
-                                    In each testcase you are given two space separated integers L and R. You have to print the number of
-                                    primes in range L to R(both included).<br />
+                                    { question[id - 1].question_desc }  
                                 </div>
-                                <div className="mb-3">
+                                {/* <div className="mb-3">
                                     INPUT FORMAT
                                     <br />
                                     First line contains a single integer T, the number of testcases.<br />
@@ -98,7 +142,7 @@ const Coding = () => {
                                 <div className="mb-3">
                                     EXPLANATION<br />
                                     Numbers in range [2, 4] are 2, 3, 4. Out of these 2 and 3 are prime numbers so answer is 2.<br />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                         
@@ -111,7 +155,7 @@ const Coding = () => {
                         </span>
 
                         <div className="custom-input mt-3">
-                        <textarea className="card custom-area"></textarea>
+                        <textarea className="card custom-area" onChange={ (e) => {setCustomInput(e.target.value)} }></textarea>
                         </div>
                     </div>
 
@@ -123,7 +167,7 @@ const Coding = () => {
                                 <select id="dropdown-basic" class="bg-info" value={language} onChange={e => setLanguage(e.target.value)}>
                                     <option class="bg-light opt" value="c">C</option>
                                     <option class="bg-light opt" value="cpp">C++</option>
-                                    <option class="bg-light opt" value="python">Python</option>
+                                    <option class="bg-light opt" value="py">Python</option>
                                 </select>
 
                             <Form className="d-flex file-bod ml-auto mr-3">
@@ -139,7 +183,7 @@ const Coding = () => {
                          className="editor"  placeholder="Type your code here" showPrintMargin={false}
                          showGutter={true}
                          onChange={(value, stat) => {
-                            console.log("onChange", value, stat);
+                            setCode(value);
                         }}
                          setOptions={{
                             enableSnippets: true,
@@ -148,19 +192,20 @@ const Coding = () => {
                             }}></AceEditor>
                     </div>
 
-                    <div className="buttons d-flex mt-4 mb-4">
-                        <button className="btn btn-info cbt">Clear</button>
-                        <button className="btn btn-info bt">Load Buffer</button>
-                        <button className="btn btn-info bt">Run Code</button>
-                        <button className="btn btn-info bt">Submit</button>
-                    </div>
+                    <Row className="justify-content-between " style={{ marginBottom: "5vh", width: "90%", marginLeft:"1rem", marginTop: "3vh" }}>
+                        
+                        <Button variant="outline-secondary" className="editor-button run" onClick={ handleRunCode }>Run Code</Button>
+                        <Button variant="outline-secondary" className="editor-button " >Load buffer</Button>
+                        <Button variant="outline-secondary" className="editor-button submit" onClick={ handleCodeSubmit }>Submit</Button>
+              
+                </Row>
                     
                     <span className="console-txt" style={{color:"white"}}>
                             <h6>Console</h6>
                     </span>
 
                     <div className="console" style={{color:"white"}}>
-                        <textarea className="card custom-area" readOnly id="scroll-con">Warning !</textarea>
+                        <textarea className="card custom-area" readOnly id="scroll-con" value={ consoleResponse.status + "\n" + consoleResponse.output }></textarea>
                     </div>
                     
                 </div>

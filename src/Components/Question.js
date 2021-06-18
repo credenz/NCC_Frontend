@@ -1,12 +1,13 @@
 import './css/quehub.css';
 import {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import {Table} from 'react-bootstrap';
 import {ProgressBar} from 'react-bootstrap';
 import axiosInstance from '../axios';
 
 const Questions = () => {
-
     const [ques, setQues] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         axiosInstance.get('questionhub/').then((res) => {
@@ -22,6 +23,10 @@ const Questions = () => {
             console.log(res.data);
         });
     }, [setQues]);
+
+    const handleCoding = (e) => {
+        history.push('/coding/' + e.target.id)
+    }
 
     return ( 
         <div className="row">
@@ -51,7 +56,7 @@ const Questions = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    <button className="btn atmpt-btn">View</button>
+                                    <button id = { ques.id } className="btn atmpt-btn" onClick={ handleCoding }>View</button>
                                 </td>
                                 <td></td>
                             
