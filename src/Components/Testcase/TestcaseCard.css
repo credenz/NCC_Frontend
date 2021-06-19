@@ -2,10 +2,11 @@
  .card-preview{
     width: 25%;
     margin-right: 3vw;
-    margin-top: 7vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 3vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     background-image: linear-gradient(to right,#003e3f,#001122);
     cursor:pointer;
+    border-radius: 0.5vw 2vw;
  }
  .card-heading, .card-status{
     text-align: center;
@@ -15,7 +16,7 @@
     -webkit-text-fill-color:transparent;
  }
   .card-preview:hover {
-    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
     
   }
 

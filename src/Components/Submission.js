@@ -35,7 +35,7 @@ const Submission = () => {
                                 <tbody>
                                 <tr>
                                 <td className="time">Time :- {sub.time}</td>
-                                <td><ProgressBar animated variant="info" now={Math.floor(Math.random() * 100)} 
+                                <td><ProgressBar animated now={Math.floor(Math.random() * 100)} 
                                 className="progress1"label={`${Math.floor(Math.random()*100)}%`}  /></td>
                                 <td className="btn btn-info view">View</td>
                                 </tr>

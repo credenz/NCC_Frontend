@@ -23,9 +23,9 @@
     transform: scale(1.03);
 }
 .progress-bar{
-    background-color: #26A69A !important;
     color:black;
     text-align: center;
+    background:#0a795d;
 }
 .progress1{
     display: flex;

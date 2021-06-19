@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import './css/login.css';
 
 class login extends Component{
     constructor(props){
@@ -36,12 +37,26 @@ class login extends Component{
 
     render(){
         return ( 
-    <div class="container">
-        <div class='row'>
-            <div class="col-md-4"></div>
-            <div class='col-md-4'>
+    <div className="container">
+        <div className='row'>
+            <div className="col-12 col-sm-2">
+            <svg viewBox="0 0 960 300" className="animate">
+                <symbol id="s-text">
+                    <text textAnchor="middle" x="50%" y="80%">NCC </text>
+                    <text textAnchor="middle" x="52%" y="80%">NCC </text>
+                </symbol>
+                <g className="g-ants">
+                    <use xlinkHref="#s-text" className="text-copy" />
+                    <use xlinkHref="#s-text" className="text-copy" />
+                    <use xlinkHref="#s-text" className="text-copy" />
+                    <use xlinkHref="#s-text" className="text-copy" />
+                    <use xlinkHref="#s-text" className="text-copy" />
+                </g>
+            </svg>
+            </div>
+            <div className="col-md-4"></div>
+            <div className='col-12 col-sm-2'>
                 <div className="form-box">
-                    
                     <div className="head-form">
                         <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
                     </div>
@@ -65,9 +80,7 @@ class login extends Component{
                 
                 </div>
             </div>
-            <div class="col-md-4">
             
-            </div>
         </div>
     </div>
          );

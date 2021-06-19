@@ -43,7 +43,7 @@
     height:30vw;
     width:43vw;
     background:linear-gradient(to right,#003e3f,#001122);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     color:white;
 }
 .que-body{
@@ -54,7 +54,7 @@
 }
 .custom-area{
     background:linear-gradient(to right,#003e3f,#001122);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     color:white;
     width:43vw;
     height:20vw;
@@ -64,31 +64,31 @@
     overflow-y: auto;
 }
 .editor{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5) !important;
     height:30vw !important;
     width:43vw !important;
     font-size: 15px !important;
 }
 .score{
-    background-color: #003e3f;
+    background: #26A69A;
     border-radius: 5px;
     color:white;
     height:3vw;
     width:10vw;
     font-size:20px;
     text-align:center; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 .file{
     height:auto;
     width:8vw;
     align-items: center;
-    background-color: #003e3f;
+    background: #26A69A;
     border-radius: 5px;
-    border:1px solid #003546;
     color:white;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 .file-bod{
     cursor: pointer;
@@ -111,14 +111,33 @@
     padding-left: 10px;
     border: none;
     outline: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 .opt{
     cursor: pointer;
     color:grey;
     border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+select{
+    background: #26A69A;
 }
 .bt{
     margin-left:5.7vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+    outline:none !important;
+    background: #26A69A;
+}
+.bt:hover{
+    box-shadow: none;
+    outline:none !important;
+}
+.cbt{
+    background: #26A69A;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.cbt{
+    box-shadow: none;
 }
 
 

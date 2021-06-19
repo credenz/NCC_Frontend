@@ -38,8 +38,7 @@ const Leaderboard = () => {
             <ReactPaginate
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
-                breakLabel={"..."}
-                breakClassName={"break-me"}
+                /*pageCount={pagecount}*/
                 onPageChange={console.log("click")}
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}

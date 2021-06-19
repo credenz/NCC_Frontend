@@ -37,7 +37,7 @@ const Questions = () => {
                                 <td className="submission">{ques.submit}</td>
                                 <td>
                                     <div>
-                                    <ProgressBar variant="custom" animated now={Math.floor(Math.random() * 100)} className="progress"label={`${Math.floor(Math.random()*100)}%`}  />
+                                    <ProgressBar animated now={Math.floor(Math.random() * 100)} className="progress" label={`${Math.floor(Math.random()*100)}%`}  />
                                     </div>
                                 </td>
                                 <td>
