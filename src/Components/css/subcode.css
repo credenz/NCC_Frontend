@@ -1,0 +1,31 @@
+.viewcode{
+    height:30vw;
+    overflow-y:auto;
+}
+.view{
+    width:10vw;
+    height:3vw;
+    background-color: #26A69A !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    font-size:15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius:4px;
+    outline:none;
+}
+.view:hover{
+    box-shadow: none;
+    transform: scale(1.03);
+    outline:none;
+}
+.clip{
+    margin-top:0.1vw;
+    margin-right:3vw;
+    color:white;
+    cursor: pointer;
+}
+.clip:hover{
+    transform: scale(1.05);
+}

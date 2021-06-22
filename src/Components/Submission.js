@@ -2,6 +2,7 @@ import './css/submission.css';
 import {ProgressBar,Table} from 'react-bootstrap';
 import {useState} from 'react';
 import ReactPaginate from 'react-paginate';
+import Code from './subcode';
 
 const Submission = () => {
     const [sub, setSub] = useState([
@@ -37,7 +38,7 @@ const Submission = () => {
                                 <td className="time">Time :- {sub.time}</td>
                                 <td><ProgressBar animated now={Math.floor(Math.random() * 100)} 
                                 className="progress1"label={`${Math.floor(Math.random()*100)}%`}  /></td>
-                                <td className="btn btn-info view">View</td>
+                                <td className="view"><Code /></td>
                                 </tr>
                                 </tbody>
                                 </Table>

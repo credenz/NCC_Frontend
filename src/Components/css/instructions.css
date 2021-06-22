@@ -45,17 +45,21 @@
     width:12vw;
     height:auto;
     font-size:18px;
+    background: #26A69A;
+    outline:none;
 }
 .pro:hover{
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
     box-shadow: none;
+    background: #26A69A;
+    outline:none;
 }
 .fa-hand-o-right{
     font-size:25px;
 }
 .fa-lightbulb-o{
-    font-size: 35px;
+    font-size: 30px;
 }
 .confirm{
     position: relative;

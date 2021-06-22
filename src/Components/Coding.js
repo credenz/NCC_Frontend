@@ -28,7 +28,7 @@ const Coding = () => {
                                     <td>Score : {400} </td>
                                 </tr>
                             </table>
-                            <select id="dropdown-basic" class="bg-info ml-auto que-no" value={question} onChange={e => setQuestion(e.target.value)}>
+                            <select id="dropdown-basic" class="ml-auto que-no" value={question} onChange={e => setQuestion(e.target.value)}>
                                     <option class="bg-light opt" value="q1">Q.1</option>
                                     <option class="bg-light opt" value="q2">Q.2</option>
                                     <option class="bg-light opt" value="q3">Q.3</option>
@@ -112,7 +112,7 @@ const Coding = () => {
                 <div className="wrapper-container right-side ml-3">
                     <div className="lang d-flex"> 
                             
-                                <select id="dropdown-basic" class="bg-info" value={language} onChange={e => setLanguage(e.target.value)}>
+                                <select id="dropdown-basic" value={language} onChange={e => setLanguage(e.target.value)}>
                                     <option class="bg-light opt" value="c">C</option>
                                     <option class="bg-light opt" value="cpp">C++</option>
                                     <option class="bg-light opt" value="python">Python</option>

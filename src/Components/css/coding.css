@@ -30,9 +30,7 @@
     width: 24px;
     background: #003546;
     border-radius: 8px; 
-   }
-
-
+}
 .left-side{
     margin-top:-1vw;
 }
@@ -118,6 +116,7 @@
     color:grey;
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    background:#26A69A;
 }
 select{
     background: #26A69A;
@@ -129,14 +128,16 @@ select{
     background: #26A69A;
 }
 .bt:hover{
+    background: #26A69A;
     box-shadow: none;
     outline:none !important;
 }
 .cbt{
     background: #26A69A;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5) !important;
 }
 .cbt{
+    background: #26A69A !important;
     box-shadow: none;
 }
 

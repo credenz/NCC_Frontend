@@ -10,7 +10,7 @@
 .view{
     width:10vw;
     height:3vw;
-    background-color: #26A69A !important;
+    background-color: transparent !important;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     font-size:15px;
     display: flex;
@@ -72,15 +72,16 @@
         width:15vw !important;
         height:7vw !important;
         margin-top:-1vw !important;
+        background: transparent !important;
     }
     .progress1{
         height:8vw;
-        width:25vw;
-        margin-left:2vw;
+        width:vw;
+        margin-left:10vw;
     }
     .time{
         text-align: left; 
-        font-size:15px !important;
+        font-size:14px !important;
     }
     .paginate{
         margin-left:2vw ;
@@ -93,7 +94,7 @@
 
 @media(max-width:375px){
     .paginate>li>a {
-        padding: 4px 8px;
+        padding: 5px 10px !important;
     }
 }
 @media(max-width:1100px){
@@ -126,8 +127,6 @@
         text-align: left;
         position: relative;
         bottom: 0.5em;
-       
-      
     }
 }
 

@@ -6,7 +6,9 @@ import "./TestcaseCard.css";
 const TestcaseCard = (props) => {
 
 
-    return (<Card className="card-preview">
+    return (
+     
+    <Card className="card-preview">
           <Card.Body >
             <Card.Title className="card-heading">Testcase {props.val}</Card.Title>
             <Card.Text className="card-status d-flex">
@@ -21,7 +23,9 @@ const TestcaseCard = (props) => {
             </svg>
             </Card.Text>            
           </Card.Body>
-        </Card>  );
+    </Card>
+    
+  );
 }
  
 export default TestcaseCard;

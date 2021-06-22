@@ -33,10 +33,6 @@
   .header-form{
   margin-bottom:15px;
   }
-  /*button{
-  margin-top:40px;
-  margin-bottom:10px;
-  }*/
   .bts{
     background: #26A69A;
     font-size:20px;
@@ -106,7 +102,7 @@ animation-delay: -1;
 }
 
 .text-copy:nth-child(2){
-stroke: #002244;
+stroke: #fff;
 animation-delay: -2s;
 }
 
@@ -116,7 +112,7 @@ animation-delay: -3s;
 }
 
 .text-copy:nth-child(4){
-stroke: #002244;
+stroke: #fff;
 animation-delay: -4s;
 }
 
@@ -132,9 +128,6 @@ animation-delay: -5s;
 /* Media Query */
 
 @media(max-width:425px){
-  body{
-    overflow-x: hidden;
-  }
   .animate{
     font-size:22em;
     width:96vw;
@@ -176,6 +169,20 @@ animation-delay: -5s;
   }
   .input-group{
     width:70vw;
+  }
+}
+
+@media(min-width:1500px){
+  .animate{
+    margin-left:-180%;
+  }
+  .form-box{
+    height:27vw;
+    margin-left: 60%;
+  }
+  .ctdlogo{
+    height:200px;
+    width:400px;
   }
 }
   

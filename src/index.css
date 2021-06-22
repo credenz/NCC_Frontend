@@ -23,7 +23,7 @@
  }
 body{
   /*background:linear-gradient(to right, #001122 0%,#26A69A 100%);*/
-  background:darkslategray;
+  background:linear-gradient(to right, #001122 0%,darkslategray 100%);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
