@@ -37,6 +37,7 @@ class login extends Component{
 
     render(){
         return ( 
+            
     <div className="container">
         <div className='row'>
             <div className="col-12 col-sm-2">
@@ -82,7 +83,10 @@ class login extends Component{
             </div>
             
         </div>
-    </div>
+        </div>
+    
+        
+   
          );
 
     }

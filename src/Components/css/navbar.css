@@ -4,8 +4,8 @@
     font-size:32px !important;
   }
   .ncc{
-    height:50px;
-    width:55px;
+    height:60px;
+    width:65px;
   }
   .logo{
     height:40px;
@@ -20,20 +20,35 @@
     z-index:5;
   }
   .no {
+    position: relative;
     color:white;
     margin-right:1.5vw;
 }
   .no:hover{
-    background-color: #26A69A ;
-    border-radius: 2px;
     color:white;
   }
-  .no:focus{
-    background-color: #26A69A ;
-    border-radius: 2px;
-    font-weight:bold;
-    text-decoration:solid;
-    color:white;
+  .no::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index:-1;
+    background-color: #26A69A;
+    color: transparent;
+    width: 0%;
+    content: "";
+    height: 3vw;
+    transition: all 0.25s;
+    border-radius: 3px;
+  }
+  .no:hover::after {
+    width: 100%;
+    color:#fff !important;
+  }
+  .navbar .navbar-nav .currentpage::after{
+    width: 100%;
+    color:#fff !important;
   }
 
   /* Media Query */
@@ -51,5 +66,11 @@
   .ctdlogo{
     height:100px;
     width:200px;
+  }
+}
+
+@media(min-width:1440px){
+  .no::after{
+    height:2.3vw;
   }
 }

@@ -1,7 +1,7 @@
 import './css/navbar.css';
 import Logout from './Logout';
 import Timer from './Timer/Timer';
-import { Link,useLocation } from "react-router-dom";
+import { NavLink,useLocation } from "react-router-dom";
 
 
 
@@ -25,16 +25,34 @@ const Navbar = () =>{
             <div className="collapse navbar-collapse justify-content-end" id="navbarNav"> 
                 <ul className="navbar-nav ">
                 <li className="nav-item">
-                    <Link className="nav-link no" to="/Questions">Question Hub </Link>
-                </li>
+              <NavLink
+                to="/Questions"
+                className="nav-link no"
+                activeClassName="currentpage"
+              >
+                QuestionHub
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/Submissions"
+                className="nav-link no"
+                activeClassName="currentpage"
+              >
+                Submissions
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/Leaderboard"
+                className="nav-link no"
+                activeClassName="currentpage"
+              >
+                Leaderboard
+              </NavLink>
+            </li>
                 <li className="nav-item">
-                    <Link className="nav-link no" to="/Submissions">Submissions</Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link no" to="/Leaderboard">Leaderboard </Link>
-                </li>
-                <li className="nav-item">
-                    <Link className="nav-link no"><Logout /></Link>
+                    <NavLink className="nav-link no" activeClassName="currentpage" to="/Result"><Logout /></NavLink>
                 </li>
                 </ul>
                 <img className="logo" src="../img/logo2.png" />

@@ -30,7 +30,7 @@ const Leaderboard = () => {
                 </thead>
                 
                     {data.map((data)=>(
-                        data.rank%2!==0 && <tr className="tablerow"><LeaderRow data={data}/></tr> ||
+                        data.rank%2!==0 && <tr className="tablerow" style={{height:"2vw"}}><LeaderRow data={data}/></tr> ||
                         data.rank%2!==0 || <tr className="tablerow"><LeaderRow data={data} /></tr>
                     ))}
                 <UserRank/>

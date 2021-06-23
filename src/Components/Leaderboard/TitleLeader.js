@@ -2,7 +2,7 @@ import './Leaderboard.css';
 import { Table } from "react-bootstrap";
 const TitleLeader = () => {
     return ( 
-        <div className="leaderrow">
+        <div className="leadertitle">
             <tr className="tabletitle">
                 <td rowSpan="2">
                     <p className="data trank">Rank</p>
