@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import './css/subcode.css';
 
-const Code = () => {
+const Code = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -18,7 +18,7 @@ const Code = () => {
                 </Modal.Header>
                    
                 <Modal.Body className="viewcode">
-                    print("Hello world")
+                    {props.code}
                 </Modal.Body>
 
         </Modal>

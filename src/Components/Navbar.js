@@ -2,6 +2,7 @@ import './css/navbar.css';
 import Logout from './Logout';
 import Timer from './Timer/Timer';
 import { NavLink,useLocation } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 
 
@@ -52,7 +53,7 @@ const Navbar = () =>{
               </NavLink>
             </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link no" activeClassName="currentpage" to="/Result"><Logout /></NavLink>
+                <Link className="nav-link no"><Logout /></Link>
                 </li>
                 </ul>
                 <img className="logo" src="../img/logo2.png" />

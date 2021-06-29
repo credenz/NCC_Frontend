@@ -1,16 +1,37 @@
 import './css/submission.css';
 import {ProgressBar,Table} from 'react-bootstrap';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import Code from './subcode';
+import axiosInstance from '../axios';
 
 const Submission = () => {
+    let counter = 1;
     const [sub, setSub] = useState([
-        {id:0, subno:1, time:'00:00'},
-        {id:1, subno:2, time:'10:00'},
-        {id:2, subno:3, time:'00:56'},
-        {id:3, subno:4, time:'24:00'}
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
 ]);
+    const [question, setQuestion] = useState(1);
+
+    const handlePageChange = (e) => {
+        setQuestion(e.selected + 1);
+        console.log(question);
+        console.log(e);
+        
+        axiosInstance.post('submissions/', {qno: question}).then((res) => {
+            console.log(res.data);
+            setSub(res.data);
+        });
+    }
+    useEffect(() => {
+        console.log(question);
+        axiosInstance.post('submissions/', {qno: question}).then((res) => {
+            console.log(res.data);
+            setSub(res.data);
+        });
+    }, [setSub])
     return (
 
        <>
@@ -21,24 +42,24 @@ const Submission = () => {
                      	previousLabel={"Questions"}
                         nextLabel={"Next"}
                         pageCount={6}
-                        onPageChange={console.log("click")}
+                        onPageChange={handlePageChange}
                         containerClassName={"paginate"}
                         subContainerClassName={"page paginate"}
                         activeClassName={"active"} />
             </div>
-
-            {sub.map((sub) =>(
+            {sub.map((su) =>(
                     <div className="col-12 col-sm-12">
-                        <div className="card sub-card" key={sub.id}>
-                            <h5 className="card-header text-center">Submission {sub.subno}</h5>
+                        <div className="card sub-card" key={su.status}>
+                            <h5 className="card-header text-center">Submission {counter}</h5>
                             <div className="card-body text-center">
                                 <Table borderless className="info">
                                 <tbody>
                                 <tr>
-                                <td className="time">Time :- {sub.time}</td>
-                                <td><ProgressBar animated now={Math.floor(Math.random() * 100)} 
-                                className="progress1"label={`${Math.floor(Math.random()*100)}%`}  /></td>
-                                <td className="view"><Code /></td>
+                                        {counter = counter + 1}
+                                <td className="time">Time :- {su.submission_time.substr(11, 5)}</td>
+                                <td><ProgressBar animated now={su.accuracy} 
+                                className="progress1"label={`${su.accuracy}%`}  /></td>
+                                <td className="view"><Code code={su.code}/></td>
                                 </tr>
                                 </tbody>
                                 </Table>

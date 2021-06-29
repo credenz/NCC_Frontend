@@ -1,41 +1,62 @@
-import React , {Component} from 'react';
+import React , {Component, useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import './css/login.css';
+import axiosInstance from '../axios';
 
-class login extends Component{
-    constructor(props){
-        super(props)
+const Login = () => {
+    const history = useHistory();
+    const [login, setLogin] = useState({
+        username: '',
+        password: '',
+    });
 
-        this.state = {
-            username : '',
-            password : ''
-        
-        }
-    }
-    
-
-    handleUsernameChange = (event) => {
-        this.setState({
+    const handleUsernameChange = (event) => {
+        setLogin({
+            ...login,
             username : event.target.value
         
         })
         
     }
 
-    handlePasswordChange = (event) => {
-        this.setState({
+    const handlePasswordChange = (event) => {
+        setLogin({
+            ...login, 
             password : event.target.value
         })
         
     }
 
 
-    handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        }
+        console.log(login);
+        axiosInstance.post('login/', {
+            username: login.username,
+            password: login.password
+        })
+        .then((res) => {
+            console.log(res.data);
+            localStorage.setItem('access_token', res.data.token);
+            axiosInstance.defaults.headers['Authorization'] = 
+                        'Token ' + localStorage.getItem('access_token');
+            history.push('/instructions');
+            console.log(res.status);
+            if (res.status !== 200) {
+                alert('Wrong Credentials')
+            }
+
+        })
+        .catch((err) => {
+            if (err.status !== 200) {
+                alert('Wrong Credentials')
+            }
+        })
+    }   
 
         
 
-    render(){
+
         return ( 
             
     <div className="container">
@@ -62,18 +83,18 @@ class login extends Component{
                         <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
                     </div>
                     <div className="body-form">
-                            <form onSubmit={this.handleSubmit}>
+                            <form onSubmit={handleSubmit}>
                                 <div className="input-group mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input type="text" className="form-control txt" placeholder="Username" value={this.state.username} onChange={this.handleUsernameChange} />
+                                    <input type="text" className="form-control txt" placeholder="Username" value={login.username} onChange={handleUsernameChange} />
                                 </div>
                                 <div className="input-group mb-3">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><i class="fa fa-lock"></i></span>
                                     </div>
-                                    <input type="password" className="form-control txt" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/>
+                                    <input type="password" className="form-control txt" placeholder="Password" value={login.password} onChange={handlePasswordChange}/>
                                 </div>
                                     <button type="submit" className="btn btn-info btn-block bts">Login</button>
                             </form>
@@ -91,9 +112,9 @@ class login extends Component{
 
     }
 
-}
+
 
    
 
  
-export default login;
+export default Login;

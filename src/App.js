@@ -11,6 +11,8 @@ import Result from './Components/Result/Result';
 import Testcase from './Components/Testcase/Testcase';
 import Error from './Components/Error/error';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import PrivateRoute from './utils/PrivateRoute';
+import PublicRoute from './utils/PublicRoute';
 
 function App() {
   return (
@@ -23,15 +25,15 @@ function App() {
 
             <div className="main-content">
               <Switch>
-                  <Route exact path="/"><Login /></Route>
-                  <Route path="/Instructions"><Instructions /></Route>
-                  <Route path="/Questions"><Questions /></Route>
-                  <Route path='/Submissions'><Submissions /></Route>
-                  <Route path='/Coding'><Coding /></Route>
-                  <Route path='/Result'><Result /></Route>
-                  <Route path='/Testcase'><Testcase /></Route>
-                  <Route path='/Leaderboard'><Leaderboard /></Route>
-                  <Route path='/Error'><Error /></Route>
+                  <PublicRoute exact path="/" component={ Login } />
+                  <PrivateRoute exact path="/instructions" component={ Instructions } />
+                  <PrivateRoute exact path="/questions" component={ Questions } />
+                  <PrivateRoute exact path='/submissions' component={ Submissions } />
+                  <PrivateRoute exact path='/coding/:id' component={ Coding } />
+                  <PublicRoute exact path='/result' component={ Result } />
+                  <PrivateRoute exact path='/testcase' component={ Testcase } />
+                  <PrivateRoute exact path='/leaderboard' component={ Leaderboard } />
+                  <Route component={ Error } />
                   
               </Switch>
             </div>

@@ -2,10 +2,10 @@ import { Table } from "react-bootstrap"
 import LeaderRow from "./LeaderRow"
 import './Leaderboard.css';
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import ReactPaginate from 'react-paginate';
 import TitleLeader from "./TitleLeader";
 import UserRank from "./UserRank";
+import axiosInstance from '../../axios';
 
 const Leaderboard = () => {
     const [data, setData] = useState([
@@ -20,6 +20,11 @@ const Leaderboard = () => {
         {rank:'9', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'},
         {rank:'10', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'}
     ])
+    useEffect(() => {
+        axiosInstance.get('leaderboard/').then((res) => {
+            console.log(res.data);
+        })
+    })
     return ( 
         <div className="leaderboard">
             <Table striped borderless hover responsive className="leadertable">
