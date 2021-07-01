@@ -22,11 +22,11 @@ const Questions = () => {
             const allQuestions = res.data;
             setQues([
                 { id: allQuestions[0].pk, qno: 1, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
-                { id: allQuestions[0].pk, qno: 2, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
-                { id: allQuestions[0].pk, qno: 3, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
-                { id: allQuestions[0].pk, qno: 4, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
-                { id: allQuestions[0].pk, qno: 5, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
-                { id: allQuestions[0].pk, qno: 6, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[1].pk, qno: 2, submit: allQuestions[1].total_attempts, progress: 100 * parseInt(allQuestions[1].correct_attempts) / parseInt(allQuestions[1].total_attempts) },
+                { id: allQuestions[2].pk, qno: 3, submit: allQuestions[2].total_attempts, progress: 100 * parseInt(allQuestions[2].correct_attempts) / parseInt(allQuestions[2].total_attempts) },
+                { id: allQuestions[3].pk, qno: 4, submit: allQuestions[3].total_attempts, progress: 100 * parseInt(allQuestions[3].correct_attempts) / parseInt(allQuestions[3].total_attempts) },
+                { id: allQuestions[4].pk, qno: 5, submit: allQuestions[4].total_attempts, progress: 100 * parseInt(allQuestions[4].correct_attempts) / parseInt(allQuestions[4].total_attempts) },
+                { id: allQuestions[5].pk, qno: 6, submit: allQuestions[5].total_attempts, progress: 100 * parseInt(allQuestions[5].correct_attempts) / parseInt(allQuestions[5].total_attempts) },
             ]);
             console.log(res.data);
         });

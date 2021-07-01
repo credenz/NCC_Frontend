@@ -46,7 +46,9 @@ const Coding = () => {
     let [customInput, setCustomInput] = useState("");
 
     const handleCodeSubmit = (e) => {
+        e.preventDefault();
         console.log(code);
+        console.log(language);
         axiosInstance
             .post('codesubmit/',{
                 qno: id,
@@ -67,7 +69,8 @@ const Coding = () => {
         .then((res) => {
             console.log(res.data);
             setCode(res.data.code);
-            setLanguage(res.data.language);
+            setLanguage(res.data.lang);
+            console.log(language);
         })
     }
 
@@ -90,6 +93,11 @@ const Coding = () => {
     const handleCodingChange = (e) => {
         setCode(e);
     }
+    
+    const handleQuestionChange = (e) => {
+        setQuestion(e.target.value);
+        history.push('/coding/' + e.target.value + '/');
+    }
 
     return ( 
            
@@ -103,13 +111,13 @@ const Coding = () => {
                                     <td>Score : {userData.totalScore} </td>
                                 </tr>
                             </table>
-                            <select id="dropdown-basic" class="ml-auto que-no" value={question} onChange={e => setQuestion(e.target.value)}>
+                            <select id="dropdown-basic" class="ml-auto que-no" value={id} onChange={handleQuestionChange}>
                                     <option class="bg-light opt" value={1}>Q.1</option>
-                                    <option class="bg-light opt" value={1}>Q.2</option>
-                                    <option class="bg-light opt" value={1}>Q.3</option>
-                                    <option class="bg-light opt" value={1}>Q.4</option>
-                                    <option class="bg-light opt" value={1}>Q.5</option>
-                                    <option class="bg-light opt" value={1}>Q.6</option>
+                                    <option class="bg-light opt" value={2}>Q.2</option>
+                                    <option class="bg-light opt" value={3}>Q.3</option>
+                                    <option class="bg-light opt" value={4}>Q.4</option>
+                                    <option class="bg-light opt" value={5}>Q.5</option>
+                                    <option class="bg-light opt" value={6}>Q.6</option>
                                     
                                 </select>
                         </div>
@@ -126,34 +134,31 @@ const Coding = () => {
                                 <div className="mb-3">
                                     INPUT FORMAT
                                     <br />
-                                    First line contains a single integer T, the number of testcases.<br />
-                                    Next T lines consists of 2 space separated integers, L and R.<br />
+                                    {quesData[question - 1].iformat}
                                 </div>
                                 <div className="mb-3">
                                     CONSTRAINTS<br />
-                                    1 = T = 10^5<br />
-                                    1 = L = R = 10^6<br />
+                                    {quesData[question - 1].constraints}
                                 </div>
                     
                                 <div className="mb-3">
                                     OUTPUT FORMAT<br />
-                                    For each testcase print a single required integer.<br />
+                                    {quesData[question - 1].oformat}
                                 </div>
                     
                                 <div className="mb-3">
                                     SAMPLE INPUT<br />
-                                    1
-                                    2 4<br/>
+                                    {quesData[question - 1].sampleInput}
                                 </div>
                     
                                 <div className="mb-3">
                                     SAMPLE OUTPUT<br />
-                                    2<br />
+                                    {quesData[question - 1].sampleOutput}
                                 </div>
                     
                                 <div className="mb-3">
                                     EXPLANATION<br />
-                                    Numbers in range [2, 4] are 2, 3, 4. Out of these 2 and 3 are prime numbers so answer is 2.<br />
+                                    {quesData[question - 1].explanation}
                                 </div>
                             </div>
                         </div>
@@ -176,7 +181,7 @@ const Coding = () => {
                 <div className="wrapper-container right-side ml-3">
                     <div className="lang d-flex"> 
                             
-                                <select id="dropdown-basic" value={language} onChange={e => setLanguage(e.target.value)}>
+                                <select id="dropdown-basic" value={language} onChange={(e) => {setLanguage(e.target.value); console.log(e.target.value)}}>
                                     <option class="bg-light opt" value="c">C</option>
                                     <option class="bg-light opt" value="cpp">C++</option>
                                     <option class="bg-light opt" value="py">Python</option>
@@ -191,7 +196,7 @@ const Coding = () => {
                     </div>
                     
                     <div className="code-editor">
-                        <AceEditor mode="python" theme="monokai" 
+                        <AceEditor mode="py" theme="monokai" 
                          style={{ height: "27rem", width: "90%" }}
                          value={code}
                          onChange={ handleCodingChange }

@@ -10,7 +10,7 @@ const Logout = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleYes = () => {
-        logout();
+        // logout();
       history.push('/Result');
   }
     return (
