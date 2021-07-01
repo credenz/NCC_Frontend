@@ -32,9 +32,9 @@ const Result = () => {
         })
         logout();
     })
-    if (!isLogin()) {
-        window.location.href = '/';
-    }
+    // if (!isLogin()) {
+    //     window.location.href = '/';
+    // }
     return ( 
         <>
         
