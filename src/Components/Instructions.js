@@ -1,13 +1,21 @@
 import './css/instructions.css';
 import {Link} from 'react-router-dom';
+import { useState } from 'react';
 
-const instructions = () => {
+const Instructions = () => {
 
     const inst = [
         { description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Impedit', key:0},
         { description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Impedit', key:1}
       
     ];
+
+    const [ischecked,setischecked] = useState(false);
+
+    const clickHandler = () => {
+        setischecked(!ischecked)
+    }
+
     return ( 
         <div className="row whole">
             <div className="inst-box card col-10 col-md-5 mb-5 brdr">
@@ -23,16 +31,21 @@ const instructions = () => {
                         })}
                     </ul>
                 </div>
-                <div className="confirm brdr">
-                <label><input type="checkbox" required id="invalidCheck2"></input><span className="confirm-txt">I have read all the instructions carefully !</span></label>
+                <div className="confirm brdr"> 
+                <label><input type="checkbox" onChange={clickHandler} required id="invalidCheck2" ></input><span className="confirm-txt">I have read all the instructions carefully !</span></label>
                 </div>
             </div>
             
             <div className="inst-foot col-10 col-md-5">
-                <Link to="/Questions"><button for="invalidCheck2" type="submit" className="btn btn-info pro"><strong >Proceed</strong> &nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></button></Link>
+            <button for="invalidCheck2" type="submit" className="btn btn-info pro" 
+            onClick={
+                 (e) => {
+                 e.preventDefault();
+                 window.location.pathname = '/Questions';}
+                }><strong >Proceed</strong> &nbsp;<i class="fa fa-hand-o-right" aria-hidden="true"></i></button>
             </div>
         </div> 
      );
 }
  
-export default instructions;
+export default Instructions;

@@ -7,7 +7,7 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
 import "ace-builds/src-noconflict/ext-beautify";
-import {Dropdown,Form} from 'react-bootstrap';
+import {Form} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router';
 import axiosInstance from '../axios';
@@ -197,7 +197,7 @@ const Coding = () => {
                     
                     <div className="code-editor">
                         <AceEditor mode="py" theme="monokai" 
-                         style={{ height: "27rem", width: "90%" }}
+                         className="editor"
                          value={code}
                          onChange={ handleCodingChange }
                          setOptions={{
