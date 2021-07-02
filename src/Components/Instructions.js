@@ -37,7 +37,7 @@ const Instructions = () => {
             </div>
             
             <div className="inst-foot col-10 col-md-5">
-            <button for="invalidCheck2" type="submit" className="btn btn-info pro" 
+            <button disabled={!ischecked} type="submit" className="btn btn-info pro" 
             onClick={
                  (e) => {
                  e.preventDefault();
