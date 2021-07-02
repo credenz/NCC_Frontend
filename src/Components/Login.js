@@ -61,7 +61,9 @@ const Login = () => {
             
     <div className="container">
         <div className='row'>
-            <div className="col-12 col-sm-2">
+            <div className="col-12 col-sm-2 combined d-flex">
+            <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
+            <p className="present">Presents</p>
             <svg viewBox="0 0 960 300" className="animate">
                 <symbol id="s-text">
                     <text textAnchor="middle" x="50%" y="80%">NCC  </text>
@@ -79,18 +81,18 @@ const Login = () => {
             <div className="col-md-4"></div>
             <div className='col-12 col-sm-2'>
                 <div className="form-box">
-                    <div className="head-form">
-                        <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
+                    <div className="head-form text-center">
+                    <h4 data-text="Login">Login</h4> 
                     </div>
                     <div className="body-form">
                             <form onSubmit={handleSubmit}>
-                                <div className="input-group mb-3">
+                                <div className="input-group mb-4">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
                                     <input type="text" className="form-control txt" placeholder="Username" value={login.username} onChange={handleUsernameChange} />
                                 </div>
-                                <div className="input-group mb-3">
+                                <div className="input-group mb-4">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><i class="fa fa-lock"></i></span>
                                     </div>
