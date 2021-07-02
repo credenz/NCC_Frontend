@@ -16,16 +16,12 @@ import PublicRoute from './utils/PublicRoute';
 
 function App() {
   return (
-    <Router>
-        <div className="container-fluid">
-         
-            <div className="Header">
+    
+        <div className="App">
+          <Router>
               <Navbar />
-            </div>
-
-            <div className="main-content">
               <Switch>
-                  <PublicRoute exact path="/" component={ Login } />
+                  <PublicRoute restricted={false} exact path="/" component={ Login } />
                   <PrivateRoute exact path="/instructions" component={ Instructions } />
                   <PrivateRoute exact path="/questions" component={ Questions } />
                   <PrivateRoute exact path='/submissions' component={ Submissions } />
@@ -34,17 +30,10 @@ function App() {
                   <PrivateRoute exact path='/testcase' component={ Testcase } />
                   <PrivateRoute exact path='/leaderboard' component={ Leaderboard } />
                   <Route component={ Error } />
-                  
               </Switch>
-            </div>
-
-            <div className="foot">
               <Footer />
-            </div>
-
-        </div>
-          
-    </Router>
+            </Router>
+        </div>      
   );
 }
 
