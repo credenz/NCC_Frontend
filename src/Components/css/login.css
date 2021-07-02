@@ -49,15 +49,15 @@
   }
 
   .ctdlogo{
-    height:170px;
-    width:360px;
+    height:110px;
+    width:220px;
     border-radius:2%;
     transition: 0.5s;
-    animation-duration: 1.5s;
+  /*  animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-    animation-name: bounce;
+    animation-name: bounce;*/
     
   }
   
@@ -81,6 +81,7 @@
 
 .combined{
   margin-left:10%;
+  margin-top:3%;
 }
 h4 {
 	color: #100f10;
@@ -183,7 +184,7 @@ animation-delay: -5s;
     margin-top:-15vw;
   }
   .combined{
-    margin-left:0;
+    margin-left:-1vw;
   }
   .form-box{
     height:80vw;
@@ -196,10 +197,10 @@ animation-delay: -5s;
     margin-bottom:6vw;
   }
   .ctdlogo{
-    height:100px;
-    width:200px;
+    height:70px;
+    width:140px;
     margin-top:15vw;
-    margin-left:23%;
+    margin-left:30%;
   }
   .present{
     margin-left:1vw;
@@ -223,8 +224,8 @@ animation-delay: -5s;
     font-size:15px;
   }
   .ctdlogo{
-    height:100px;
-    width:200px;
+    height:60px;
+    width:120px;
   }
   .input-group{
     width:70vw;
@@ -244,11 +245,11 @@ animation-delay: -5s;
     margin-top:25%;
   }
   .ctdlogo{
-    height:220px;
-    width:450px;
+    height:130px;
+    width:260px;
   }
   .combined{
-    margin-top:2%;
+    margin-top:7%;
     margin-left:7%;
   }
   h4{
