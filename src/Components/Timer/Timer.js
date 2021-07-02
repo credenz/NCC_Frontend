@@ -82,12 +82,24 @@ class FlipClock extends React.Component {
   }
 
   updateTime() {
-    // get new date
-    const time = new Date();
-    // set time units
+    // Set future time
+    const countDate = new Date("July 5, 2021 15:58:00").getTime();
 
-    const minutes = time.getMinutes();
-    const seconds = time.getSeconds();
+    // get current time
+    const time = new Date().getTime();
+
+    const gap = countDate - time;
+
+    // const minutes = time.getMinutes();
+    // const seconds = time.getSeconds();
+
+    const sec = 1000;
+    const min = 1000 * 60;
+    const hour = 1000 * 60 * 60;
+
+    const minutes = Math.floor((gap % hour) / min);
+    const seconds = Math.floor((gap % min) / sec);
+
 
     // on minute chanage, update minutes and shuffle state
     if (minutes !== this.state.minutes) {
