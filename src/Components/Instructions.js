@@ -1,5 +1,4 @@
 import './css/instructions.css';
-import {Link} from 'react-router-dom';
 import { useState } from 'react';
 
 const Instructions = () => {

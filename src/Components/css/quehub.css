@@ -33,14 +33,14 @@
 
 @media(min-width:1600px){
     .tab-head{
-        font-size:30px;
+        font-size:28px;
     }
     .elements{
-        height:5vw !important;
+        height:4vw !important;
         padding-top: 1vw !important;
     }
     .head{
-        height:5vw !important;
+        height:4.5vw !important;
     }
 }
 
@@ -48,7 +48,7 @@
     .tab-head{
         margin-top:50%;
         margin-left:2%;
-        width:80vw !important;
+        width:70vw !important;
     }
     .submission{
         display: none;

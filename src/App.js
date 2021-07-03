@@ -34,6 +34,7 @@ function App() {
                   <PrivateRoute exact path='/testcase' component={ Testcase } />
                   <PrivateRoute exact path='/leaderboard' component={ Leaderboard } />
                   <Route component={ Error } />
+            
                   
               </Switch>
             </div>

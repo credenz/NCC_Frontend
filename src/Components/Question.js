@@ -9,14 +9,7 @@ import axiosInstance from '../axios';
 const Questions = () => {
     const history = useHistory();
     const [ques, setQues] = useState([]);
-    // const [ques, setQues] = useState([
-    //     {id:0, qno:1, submit:Math.floor(Math.random()*100)},
-    //     {id:1, qno:2, submit:Math.floor(Math.random()*100)},
-    //     {id:2, qno:3, submit:Math.floor(Math.random()*100)},
-    //     {id:3, qno:4, submit:Math.floor(Math.random()*100)},
-    //     {id:4, qno:5, submit:Math.floor(Math.random()*100)},
-    //     {id:5, qno:6, submit:Math.floor(Math.random()*100)}
-    // ]);
+
     useEffect(() => {
         axiosInstance.get('questionhub/').then((res) => {
             const allQuestions = res.data;
@@ -35,6 +28,7 @@ const Questions = () => {
     const handleCoding = (e) => {
         history.push('/coding/' + e.target.id)
     }
+
 
     return ( 
         <div className="row">

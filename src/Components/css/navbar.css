@@ -54,18 +54,14 @@
   /* Media Query */
 
 @media(max-width:425px){
-  .ctdlogo{
-    height:130px;
-    width:260px;
+  .no::after{
+    height:10vw;
   }
 }
+
 @media(max-width:325px){
   .footer{
     font-size:15px;
-  }
-  .ctdlogo{
-    height:100px;
-    width:200px;
   }
 }
 

@@ -59,7 +59,7 @@ const Submission = () => {
                                 <td className="time">Time :- {su.submission_time.substr(11, 5)}</td>
                                 <td><ProgressBar animated now={su.accuracy} 
                                 className="progress1"label={`${su.accuracy}%`}  /></td>
-                                <td className="view"><Code code={su.code}/></td>
+                                <td className="views"><Code code={su.code}/></td>
                                 </tr>
                                 </tbody>
                                 </Table>

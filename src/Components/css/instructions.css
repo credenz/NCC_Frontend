@@ -146,16 +146,18 @@
         width:80vw;
     }
     .inst-title{
-        width:60vw;
-        font-size:15px;
+        width:65vw;
         margin-bottom: 1vw;
     }
+    .inst-title h2{
+        font-size: 25px;
+    }
     .fa-lightbulb-o{
-        font-size:35px;
+        font-size:25px;
     }
     .inst-content{
         display:flex;
-        font-size: 17px;
+        font-size: 15px;
     }
     .pro{
         width:40vw;
@@ -177,8 +179,22 @@
         top:77%;
         left:5%;
     }
-    
-    
+}
+
+@media(max-width:380px){
+    .inst-content{
+        font-size:13px;
+    }
+}
+
+@media(max-width:350px){
+    .pro{
+        width:50vw;
+        left:26%;
+    }
+    .inst-content{
+        font-size:11px;
+    }
 }
 
 

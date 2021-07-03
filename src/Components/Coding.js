@@ -1,16 +1,25 @@
 import './css/coding.css';
 import AceEditor from 'react-ace';
-import "ace-builds/src-noconflict/mode-python";
+/*import "ace-builds/src-noconflict/mode-python";
 import "ace-builds/src-noconflict/mode-c_cpp";
 import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-spellcheck";
 import "ace-builds/src-noconflict/ext-searchbox";
+import "ace-builds/src-noconflict/ext-beautify";*/
+import "brace/mode/c_cpp";
+import "brace/mode/python";
+import "brace/ext/modelist";
+import "brace/theme/monokai";
+import "ace-builds/src-noconflict/ext-language_tools";
 import "ace-builds/src-noconflict/ext-beautify";
+import "ace-builds/src-noconflict/ext-spellcheck";
+import "ace-builds/src-noconflict/ext-searchbox";
 import {Form} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router';
 import axiosInstance from '../axios';
+import { Editor } from 'brace';
 
 
 const Coding = () => {
@@ -97,6 +106,11 @@ const Coding = () => {
     const handleQuestionChange = (e) => {
         setQuestion(e.target.value);
         history.push('/coding/' + e.target.value + '/');
+    }
+
+    const clearCode = () =>{
+       setCode("");
+       
     }
 
     return ( 
@@ -197,18 +211,21 @@ const Coding = () => {
                     
                     <div className="code-editor">
                         <AceEditor mode="py" theme="monokai" 
-                         className="editor"
+                         className="edit" id="editor"
                          value={code}
                          onChange={ handleCodingChange }
                          setOptions={{
                             enableSnippets: true,
                             showLineNumbers: true, 
                             tabSize: 4,
-                            }}></AceEditor>
+                            showPrintMargin: false,
+                            showGutter: true, 
+                            wrap: true,
+                        }}></AceEditor>
                     </div>
 
                     <div className="buttons d-flex mt-4 mb-4">
-                        <button className="btn btn-info cbt">Clear</button>
+                        <button className="btn btn-info bt"onClick={clearCode}>Clear</button>
                         <button className="btn btn-info bt" onClick={ handleLoadBuffer }>Load Buffer</button>
                         <button className="btn btn-info bt" onClick={ handleRunCode }>Run Code</button>
                         <button className="btn btn-info bt" onClick={ handleCodeSubmit }>Submit</button>

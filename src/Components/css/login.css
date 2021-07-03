@@ -49,19 +49,20 @@
   }
 
   .ctdlogo{
-    height:170px;
-    width:360px;
+    height:100px;
+    width:200px;
     border-radius:2%;
-    transition: 0.5s;
+    margin-left:10%;
+/*    transition: 0.5s;
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-    animation-name: bounce;
+    animation-name: bounce;*/
     
   }
   
-  @keyframes bounce {
+/*  @keyframes bounce {
       0%, 100%, 20%, 50%, 80% {
           -webkit-transform: translateY(0);
           -ms-transform:     translateY(0);
@@ -77,14 +78,11 @@
           -ms-transform:     translateY(-5px);
           transform:         translateY(-5px)
       }
-  }
+  }*/
 
-.combined{
-  margin-left:10%;
-}
 h4 {
 	color: #100f10;
-	font-size: 6.5vw;
+	font-size: 6.7vw;
 	position: relative;
 	text-transform: uppercase;
 	-webkit-text-stroke: 0.3vw #f7f7fe;
@@ -122,13 +120,19 @@ h4::before {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin-left:10%;
+  margin-top: 3%;
+}
+.present{
+  font-weight:bolder;
+  color:#fff;
 }
 /* NCC animation */
 
 .animate {
   font: 22em 'Montserrat';
-  width: 43vw;
-  height: 16vw;
+  width: 46vw;
+  height: 19vw;
   margin-left:-70%;
   margin-top:-35%;
 }
@@ -196,10 +200,10 @@ animation-delay: -5s;
     margin-bottom:6vw;
   }
   .ctdlogo{
-    height:100px;
-    width:200px;
+    height:80px;
+    width:160px;
     margin-top:15vw;
-    margin-left:23%;
+    margin-left:28%;
   }
   .present{
     margin-left:1vw;
@@ -207,6 +211,23 @@ animation-delay: -5s;
   .input-group{
     width:60vw;
   }
+}
+
+@media(max-width:390px){
+  .ctdlogo{
+    margin-left:26%;
+  }
+  .present{
+    margin-left:1.5vw;
+  }
+  .animate{
+    margin-top:-18vw;
+    margin-left:1%;
+    font-size:21em;
+    height:43vw;
+    width:86vw;
+  }
+
 }
 @media(max-width:375px){
   .form-box{
@@ -219,23 +240,32 @@ animation-delay: -5s;
   }
 }
 @media(max-width:325px){
-  .footer{
-    font-size:15px;
-  }
   .ctdlogo{
-    height:100px;
-    width:200px;
+    height:70px;
+    width:140px;
+    margin-left:24%;
+    margin-top:17vw;
+  }
+  .present{
+    margin-top:-2vw;
+  }
+  .animate{
+    margin-top:-23vw;
+    margin-left:-1%;
   }
   .input-group{
     width:70vw;
   }
+  h4{
+    font-size:22vw;
+  }
 }
 
-@media(min-width:1500px){
+@media(min-width:1650px){
   .animate{
     margin-left:-110%;
-    height:15;
-    width:41;
+    height:15vw;
+    width:41vw;
   }
   .form-box{
     height:26vw;
@@ -244,11 +274,11 @@ animation-delay: -5s;
     margin-top:25%;
   }
   .ctdlogo{
-    height:220px;
-    width:450px;
+    height:120px;
+    width:240px;
   }
   .combined{
-    margin-top:2%;
+    margin-top:9%;
     margin-left:7%;
   }
   h4{

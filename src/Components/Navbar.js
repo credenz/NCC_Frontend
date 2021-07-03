@@ -12,8 +12,8 @@ const Navbar = () =>{
   if (
     location.pathname === "/Questions" ||
     location.pathname === "/Submissions" ||
-    location.pathname === "/Coding" ||
-    location.pathname === "/Testcase" ||
+    location.pathname.includes("coding") ||
+    location.pathname.includes("testcase") ||
     location.pathname === "/Leaderboard"
     )
     return (
