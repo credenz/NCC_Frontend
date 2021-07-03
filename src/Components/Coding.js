@@ -113,6 +113,18 @@ const Coding = () => {
        
     }
 
+    const [editorMode,seteditorMode] = useState("python")
+
+    const handleEditorModeChange = (e) => {
+        if(e.target.value === "py")
+        {
+            seteditorMode("python")
+        }
+        else{
+            seteditorMode("c_cpp")
+        }
+    } 
+
     return ( 
            
         <div className="container-fluid">
@@ -195,7 +207,7 @@ const Coding = () => {
                 <div className="wrapper-container right-side ml-3">
                     <div className="lang d-flex"> 
                             
-                                <select id="dropdown-basic" value={language} onChange={(e) => {setLanguage(e.target.value); console.log(e.target.value)}}>
+                                <select id="dropdown-basic" value={language} onChange={(e) => {setLanguage(e.target.value);  handleEditorModeChange(e);}}>
                                     <option class="bg-light opt" value="c">C</option>
                                     <option class="bg-light opt" value="cpp">C++</option>
                                     <option class="bg-light opt" value="py">Python</option>
@@ -210,17 +222,15 @@ const Coding = () => {
                     </div>
                     
                     <div className="code-editor">
-                        <AceEditor mode="py" theme="monokai" 
-                         className="edit" id="editor"
-                         value={code}
+                        <AceEditor mode={editorMode} theme="monokai" 
+                         className="edit"  placeholder="Type your code here" showPrintMargin={false}
+                         showGutter={true}
                          onChange={ handleCodingChange }
+                         value={code}
                          setOptions={{
                             enableSnippets: true,
                             showLineNumbers: true, 
                             tabSize: 4,
-                            showPrintMargin: false,
-                            showGutter: true, 
-                            wrap: true,
                         }}></AceEditor>
                     </div>
 

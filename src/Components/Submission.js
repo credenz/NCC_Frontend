@@ -31,7 +31,7 @@ const Submission = () => {
             console.log(res.data);
             setSub(res.data);
         });
-    }, [setSub])
+    }, [setSub,question])
     return (
 
        <>
@@ -42,7 +42,7 @@ const Submission = () => {
                      	previousLabel={"Questions"}
                         nextLabel={"Next"}
                         pageCount={6}
-                        onPageChange={handlePageChange}
+                        onPageChange={(e) => {setQuestion(e.selected + 1); console.log(e.selected + 1)}}
                         containerClassName={"paginate"}
                         subContainerClassName={"page paginate"}
                         activeClassName={"active"} />
