@@ -4,7 +4,7 @@ const OurTeam = () => {
     return(
 
         <div className="container">
-        <div className="row mt-5">
+        <div className="row mar">
           <div className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="our-team">
               <div className="picture">

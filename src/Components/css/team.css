@@ -9,6 +9,10 @@
     margin-top:1vw;
     margin-bottom:3vw;
   }
+
+.mar{
+    margin-top:2vw;
+}
   
   .our-team .picture {
     display: inline-block;
@@ -109,5 +113,9 @@
         height:250px;
         width:250px;
     }
+    .mar{
+        margin-top:15vw;
+    }
+
 
   }

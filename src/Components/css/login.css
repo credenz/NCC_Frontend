@@ -29,7 +29,7 @@
     align-items:center;
     border-radius:2%;
     margin-top:7%;
-    margin-left:-30%;
+    margin-left:-20%;
     
   }
   .header-form{
@@ -52,7 +52,7 @@
     height:100px;
     width:200px;
     border-radius:2%;
-    margin-left:10%;
+    margin-left:-30%;
 /*    transition: 0.5s;
     animation-duration: 1.5s;
     animation-fill-mode: both;
@@ -120,12 +120,13 @@ h4::before {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-left:10%;
+  margin-left:5%;
   margin-top: 3%;
 }
 .present{
   font-weight:bolder;
   color:#fff;
+  margin-left:-90%;
 }
 /* NCC animation */
 
@@ -133,7 +134,7 @@ h4::before {
   font: 22em 'Montserrat';
   width: 46vw;
   height: 19vw;
-  margin-left:-70%;
+  margin-left:-110%;
   margin-top:-35%;
 }
 
@@ -263,7 +264,7 @@ animation-delay: -5s;
 
 @media(min-width:1650px){
   .animate{
-    margin-left:-110%;
+    margin-left:-130%;
     height:15vw;
     width:41vw;
   }
@@ -286,6 +287,9 @@ animation-delay: -5s;
   }
   .input-group{
     margin-bottom:6vw;
+  }
+  .ncc-title{
+    margin-left:40%;
   }
 }
   
