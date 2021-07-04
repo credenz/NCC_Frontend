@@ -38,7 +38,7 @@ const Submission = () => {
          <div className="row rcard">
             <div className="row">
                 <ReactPaginate
-                        initialPage={1}
+                        initialPage={0}
                      	previousLabel={"Questions"}
                         nextLabel={"Next"}
                         pageCount={6}

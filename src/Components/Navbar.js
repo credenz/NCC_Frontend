@@ -64,6 +64,7 @@ const Navbar = () =>{
     return(
         <nav className="navbar navbar-expand-sm justify-content-right nbt">
            <img className="ncc" src="../img/NCC_21.png" />
+           <h5 className="ncc-title">National Computing Contest</h5>
            <div className="collapse navbar-collapse justify-content-end" id="navbarNav"> 
             <img className="logo" src="../img/logo2.png" />
            </div>
