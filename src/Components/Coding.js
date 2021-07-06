@@ -197,7 +197,7 @@ const Coding = () => {
                             <h6>Custom Input</h6>
                         </span>
 
-                        <div className="custom-input mt-3">
+                        <div className="custom-input mt-2">
                         <textarea className="card custom-area" onChange={ (e) => {setCustomInput(e.target.value)}}></textarea>
                         </div>
                     </div>
@@ -241,7 +241,7 @@ const Coding = () => {
                         <button className="btn btn-info bt" onClick={ handleCodeSubmit }>Submit</button>
                     </div>
                     
-                    <span className="console-txt" style={{color:"white"}}>
+                    <span className="console-txt mb-5" style={{color:"white"}}>
                             <h6>Console</h6>
                     </span>
 

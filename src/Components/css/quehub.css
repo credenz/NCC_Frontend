@@ -13,7 +13,7 @@
 }
 .progress{
     margin-top:0.5vw;
-    height:2vw;
+    height:1.8vw;
 }
 .elements{
     border-top:1px solid white;
@@ -26,6 +26,7 @@
     background-color: #26A69A !important;
     color:white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    font-size:15px;
 }
 .progress-bar{
      color:white !important;
@@ -36,11 +37,15 @@
         font-size:28px;
     }
     .elements{
-        height:4vw !important;
+        height:3.7vw !important;
         padding-top: 1vw !important;
     }
     .head{
         height:4.5vw !important;
+    }
+
+    .atmpt-btn{
+        font: size 15px;
     }
 }
 

@@ -87,10 +87,14 @@
 
  @media(min-width:1440px){
    .leaderrow{
-     height:6vh;
+     height:8vh;
    }
    .leadertitle{
-     height:15vh;
+     height:19vh;
    }
   
+   .userrank
+   {
+     height:10.5vh;
+   }
  }

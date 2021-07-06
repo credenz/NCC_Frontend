@@ -62,7 +62,7 @@ const Login = () => {
     <div className="container">
         <div className='row'>
             <div className="col-12 col-sm-2 combined d-flex">
-            <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
+            <img src="./img/Logo.png" className="ctdlogo mb-4 bounce"></img>
             <p className="present">Presents</p>
             <svg viewBox="0 0 960 300" className="animate">
                 <symbol id="s-text">

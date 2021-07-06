@@ -91,22 +91,23 @@
 .confirm-txt{
     position: relative;
     bottom:0.25vw;
+    font-size:20px;
 }
 
 /* Media Query */
 
 @media(min-width:1500px){
     .inst-box{
-        font-size:25px;
-        margin-top: 3vw;
+        font-size:20px;
+        
     }
     .inst-title{
-        font-size:35px;
+        font-size:33px;
     }
     .pro{
         height:4vw;
         width:15vw;
-        font-size:32px;
+        font-size:28px;
     }
     .fa-hand-o-right{
         font-size:30px;
@@ -134,6 +135,7 @@
     .confirm-txt{
         position: relative;
         bottom:0.1vw;
+        font-size:18px;
     }
 }
 

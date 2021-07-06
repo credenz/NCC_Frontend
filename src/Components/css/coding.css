@@ -39,7 +39,7 @@
 }
 .que-card{
     height:30vw;
-    width:43vw;
+    width:44vw;
     background:linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     color:white;
@@ -54,7 +54,7 @@
     background:linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     color:white;
-    width:43vw;
+    width:44vw;
     height:20vw;
     padding:10px;
     outline: none;
@@ -64,7 +64,7 @@
 .edit{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5) !important;
     height:30vw !important;
-    width:43vw !important;
+    width:44vw !important;
     font-size: 15px !important;
 }
 .score{
@@ -122,7 +122,7 @@ select{
     background: #26A69A;
 }
 .bt{
-   margin-left:3vw;
+   margin-left:4vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
     outline:none !important;
     background: #26A69A;

@@ -40,7 +40,7 @@ const Questions = () => {
 
 
     return ( 
-        <div className="row">
+        <div className="row mt-2">
             <div className="col-8 col-sm-12">
                 <Table borderless className="tab-head">
                     <thead>
