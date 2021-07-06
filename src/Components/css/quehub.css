@@ -52,8 +52,8 @@
 @media(max-width:425px){
     .tab-head{
         margin-top:50%;
-        margin-left:2%;
-        width:70vw !important;
+        margin-left:3%;
+        width:65vw !important;
     }
     .submission{
         display: none;

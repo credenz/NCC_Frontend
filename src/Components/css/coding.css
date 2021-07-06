@@ -189,7 +189,7 @@ select{
     
 }
 
-@media(max-width:390px){
+@media(max-width:402px){
     .buttons{
         margin-left:-12vw;
     }
@@ -199,13 +199,19 @@ select{
     .left-side{
         margin-left:-2vw;
     }
+    .score{
+        width:50vw;
+    }
 }
 
-@media(max-width:365px){
+@media(max-width:375px){
     .buttons{
         margin-left:-16vw;
     }
     .right-side{
         margin-left:-5vw;
+    }
+    .score{
+        width:80vw;
     }
 }

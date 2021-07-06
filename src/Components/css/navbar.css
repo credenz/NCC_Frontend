@@ -71,18 +71,18 @@
 
 @media(max-width:403px){
   .ncc-title{
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media(max-width:376px){
   .ncc-title{
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
 @media(min-width:1440px){
   .no::after{
-    height:2.8vw;
+    height:2.55vw;
   }
 
   .ncc-title{

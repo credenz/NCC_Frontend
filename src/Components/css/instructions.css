@@ -128,14 +128,13 @@
         content: "\2713";
         position: absolute;
         color: white;
-        top: 50%;
+        top: 51%;
         transform: translateY(-50%);
-        left:2px;
+        left:3px;
     }
     .confirm-txt{
         position: relative;
         bottom:0.1vw;
-        font-size:18px;
     }
 }
 
@@ -162,12 +161,11 @@
         font-size: 15px;
     }
     .pro{
-        width:40vw;
+        width:43vw;
         left:30%;
     }
     .confirm{
         height:max-content;
-        font-size: 14px;
     }
     .confirm > label input{
         height:15px;
@@ -181,17 +179,23 @@
         top:77%;
         left:5%;
     }
-}
-
-@media(max-width:380px){
-    .inst-content{
-        font-size:13px;
+    .confirm-txt{
+        font-size: 14px;
     }
 }
 
-@media(max-width:350px){
+@media(max-width:387px){
+    .inst-content{
+        font-size:13px;
+    }
+    .confirm-txt{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:353px){
     .pro{
-        width:50vw;
+        width:55vw;
         left:26%;
     }
     .inst-content{

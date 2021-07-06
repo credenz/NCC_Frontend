@@ -3,7 +3,7 @@
     justify-content: center;
 }
 .sub-card{
-    height:9vw;
+    height:9.3vw;
     width:70vw;
     background: linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
@@ -11,21 +11,6 @@
     margin-top:2vw;
     color:white;
 }
-/*.view{
-    width:10vw;
-    height:3vw;
-    background-color: transparent !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    font-size:15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}*/
-/*.view:hover{
-    box-shadow: none;
-    transform: scale(1.03);
-}*/
 .progress-bar{
     color:black;
     text-align: center;
