@@ -19,7 +19,6 @@ import {Form} from 'react-bootstrap';
 import {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router';
 import axiosInstance from '../axios';
-import { Editor } from 'brace';
 
 
 const Coding = () => {
@@ -123,7 +122,8 @@ const Coding = () => {
         else{
             seteditorMode("c_cpp")
         }
-    } 
+    }
+
 
     return ( 
            

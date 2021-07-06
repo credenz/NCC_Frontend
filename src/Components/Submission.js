@@ -6,7 +6,7 @@ import Code from './subcode';
 import axiosInstance from '../axios';
 
 const Submission = () => {
-    let counter = 1;
+    let counter = 0;
     const [sub, setSub] = useState([
         {accuracy:0, code: "loading....", submission_time:'00:00'},
         {accuracy:0, code: "loading....", submission_time:'00:00'},
@@ -50,12 +50,11 @@ const Submission = () => {
             {sub.map((su) =>(
                     <div className="col-12 col-sm-12">
                         <div className="card sub-card" key={su.status}>
-                            <h5 className="card-header text-center">Submission {counter}</h5>
+                            <h5 className="card-header text-center">Submission {counter+=1}</h5>
                             <div className="card-body text-center">
                                 <Table borderless className="info">
                                 <tbody>
                                 <tr>
-                                        {counter = counter + 1}
                                 <td className="time">Time :- {su.submission_time.substr(11, 5)}</td>
                                 <td><ProgressBar animated now={su.accuracy} 
                                 className="progress1"label={`${su.accuracy}%`}  /></td>

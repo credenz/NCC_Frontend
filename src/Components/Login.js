@@ -67,7 +67,7 @@ const Login = () => {
             <svg viewBox="0 0 960 300" className="animate">
                 <symbol id="s-text">
                     <text textAnchor="middle" x="50%" y="80%">NCC  </text>
-                    <text textAnchor="middle" x="52%" y="80%">NCC </text>
+                    <text textAnchor="middle" x="51%" y="80%">NCC </text>
                 </symbol>
                 <g className="g-ants">
                     <use xlinkHref="#s-text" className="text-copy" />

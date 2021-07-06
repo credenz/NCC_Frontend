@@ -1,6 +1,11 @@
 .viewcode{
-    height:30vw;
-    overflow-y:auto;
+    height:28vw;
+}
+.code{
+    height:24.5rem !important;
+    width:107% !important;
+    margin-left:-3.5%;
+    margin-top:-3.5%;
 }
 .view{
     width:10vw;

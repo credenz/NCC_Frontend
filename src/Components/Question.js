@@ -4,11 +4,17 @@ import { useHistory } from 'react-router-dom';
 import {Table} from 'react-bootstrap';
 import {ProgressBar} from 'react-bootstrap';
 import axiosInstance from '../axios';
+import Preloader from './Preloader';
 
 
 const Questions = () => {
     const history = useHistory();
     const [ques, setQues] = useState([]);
+
+    const [questionData, setQuestionData] = useState({
+        loading: true,
+        questions: null,
+      })
 
     useEffect(() => {
         axiosInstance.get('questionhub/').then((res) => {
@@ -21,9 +27,12 @@ const Questions = () => {
                 { id: allQuestions[4].pk, qno: 5, submit: allQuestions[4].total_attempts, progress: 100 * parseInt(allQuestions[4].correct_attempts) / parseInt(allQuestions[4].total_attempts) },
                 { id: allQuestions[5].pk, qno: 6, submit: allQuestions[5].total_attempts, progress: 100 * parseInt(allQuestions[5].correct_attempts) / parseInt(allQuestions[5].total_attempts) },
             ]);
+            setQuestionData({ loading: false, questions: null });
             console.log(res.data);
         });
-    }, [setQues]);
+    }, [setQuestionData, setQues]);
+
+    if (questionData.loading) return <Preloader />
 
     const handleCoding = (e) => {
         history.push('/coding/' + e.target.id)
