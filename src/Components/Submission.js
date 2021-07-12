@@ -4,9 +4,11 @@ import {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import Code from './subcode';
 import axiosInstance from '../axios';
+import Preloader from './Preloader';
 
 const Submission = () => {
     let counter = 0;
+    const [isLoading, setIsLoading] = useState(true)
     const [sub, setSub] = useState([
         {accuracy:0, code: "loading....", submission_time:'00:00'},
         {accuracy:0, code: "loading....", submission_time:'00:00'},
@@ -30,8 +32,11 @@ const Submission = () => {
         axiosInstance.post('submissions/', {qno: question}).then((res) => {
             console.log(res.data);
             setSub(res.data);
+            setIsLoading(false)
         });
-    }, [setSub,question])
+    }, [setSub, question])
+    
+    if (isLoading) return <Preloader />
     return (
 
        <>

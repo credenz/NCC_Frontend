@@ -6,20 +6,11 @@ import ReactPaginate from 'react-paginate';
 import TitleLeader from "./TitleLeader";
 import UserRank from "./UserRank";
 import axiosInstance from '../../axios';
+import Preloader from '../Preloader';
 
 const Leaderboard = () => {
-    // const [data, setData] = useState([
-    //     {rank:'1', username:'ABC',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'80'},
-    //     {rank:'2', username:'DEF',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'78'},
-    //     {rank:'3', username:'GHI',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'77'},
-    //     {rank:'4', username:'JKL',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'69'},
-    //     {rank:'5', username:'MNO',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'58'},
-    //     {rank:'6', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'},
-    //     {rank:'7', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'},
-    //     {rank:'8', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'},
-    //     {rank:'9', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'},
-    //     {rank:'10', username:'PQR',q1:60,q2:60, q3:60, q4:60,q5:60,q6:60, total:'50'}
-    // ])
+  
+    const [isLoading, setIsLoading] = useState(true)
     const [page, setPage] = useState(1);
     const [data, setData] = useState([
         {username: {
@@ -32,8 +23,13 @@ const Leaderboard = () => {
         axiosInstance.get('leaderboard/?page=' + page).then((res) => {
             console.log(res.data);
             setData(res.data);
+            setIsLoading(false)
         })
     }, [setData, page]);
+
+
+    if (isLoading) return <Preloader />
+
     return ( 
         <div className="leaderboard">
             <Table striped borderless hover responsive className="leadertable">
@@ -52,7 +48,7 @@ const Leaderboard = () => {
             <ReactPaginate
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
-                /*pageCount={pagecount}*/
+                pageCount={data.page_range[data.page_range.length-1]}
                 onPageChange={(e) => {setPage(e.selected + 1); console.log(e.selected + 1)}}
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}

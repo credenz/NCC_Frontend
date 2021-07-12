@@ -46,13 +46,15 @@
 }
 .que-body{
     overflow-y: auto;
-    overflow-x: hidden;
+   
 }
+
 .check{
     color:white;
 }
 pre{
     color:white !important;
+    overflow: hidden !important;
 }
 .custom-area{
     background:linear-gradient(to right,#003e3f,#001122);
