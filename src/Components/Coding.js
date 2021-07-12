@@ -155,7 +155,9 @@ const Coding = () => {
                             <div className="card-body que-body" id="scroll">
                                 
                                 <div className="question mb-5">
-                                    {quesData[question - 1].question_desc}
+                                    <pre>
+                                    {`${quesData[question - 1].question_desc}`}
+                                    </pre>
                                 </div>
                                 <div className="mb-3">
                                     INPUT FORMAT
