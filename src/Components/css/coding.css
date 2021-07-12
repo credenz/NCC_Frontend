@@ -51,8 +51,8 @@
 .check{
     color:white;
 }
-.codingtext{
-    color:white;
+pre{
+    color:white !important;
 }
 .custom-area{
     background:linear-gradient(to right,#003e3f,#001122);
