@@ -154,39 +154,53 @@ const Coding = () => {
                             </div>
                             <div className="card-body que-body" id="scroll">
                                 
-                                <div className="question mb-5">
+                                <div className="question mb-5 codingtext">
                                     <pre>
                                     {`${quesData[question - 1].question_desc}`}
                                     </pre>
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-3 codingtext">
                                     INPUT FORMAT
                                     <br />
-                                    {quesData[question - 1].iformat}
+                                    <pre>
+                                    {`${quesData[question - 1].iformat}`}
+                                    </pre>
+                                   
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-3 codingtext">
                                     CONSTRAINTS<br />
-                                    {quesData[question - 1].constraints}
+                                    <pre>
+                                    {`${quesData[question - 1].constraints}`}
+                                     </pre>
                                 </div>
                     
-                                <div className="mb-3">
+                                <div className="mb-3 codingtext">
                                     OUTPUT FORMAT<br />
-                                    {quesData[question - 1].oformat}
+                                    <pre>
+                                        {`${quesData[question - 1].oformat}`}
+                                        </pre>
                                 </div>
                     
-                                <div className="mb-3">
+                                <div className="mb-3 codingtext">
                                     SAMPLE INPUT<br />
-                                    {quesData[question - 1].sampleInput}
+                                    <pre>
+                                    {`${ quesData[question - 1].sampleInput }`}
+                                    </pre>
+                                  
                                 </div>
                     
-                                <div className="mb-3">
+                                <div className="mb-3 codingtext">
                                     SAMPLE OUTPUT<br />
-                                    {quesData[question - 1].sampleOutput}
+                                    <pre>{`${quesData[question - 1].sampleOutput}` }</pre>
+                                  
                                 </div>
                     
-                                <div className="mb-3">
+                                <div className="mb-3 codingtext">
                                     EXPLANATION<br />
-                                    {quesData[question - 1].explanation}
+                                    <pre>
+                                        {`${quesData[question - 1].explanation }`}
+                                    </pre>
+                                    
                                 </div>
                             </div>
                         </div>

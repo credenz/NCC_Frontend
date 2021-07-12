@@ -46,8 +46,12 @@
 }
 .que-body{
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .check{
+    color:white;
+}
+.codingtext{
     color:white;
 }
 .custom-area{
