@@ -11,6 +11,7 @@ import Preloader from '../Preloader';
 const Leaderboard = () => {
   
     const [isLoading, setIsLoading] = useState(true)
+
     const [page, setPage] = useState(1);
     const [data, setData] = useState([
         {username: {
@@ -23,10 +24,13 @@ const Leaderboard = () => {
         axiosInstance.get('leaderboard/?page=' + page).then((res) => {
             console.log(res.data);
             setData(res.data);
+           
             setIsLoading(false)
         })
     }, [setData, page]);
 
+    
+   
 
     if (isLoading) return <Preloader />
 
@@ -48,7 +52,7 @@ const Leaderboard = () => {
             <ReactPaginate
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
-                pageCount={data.page_range[data.page_range.length-1]}
+              pageCount={data[0].page_range.length}
                 onPageChange={(e) => {setPage(e.selected + 1); console.log(e.selected + 1)}}
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}
