@@ -1,12 +1,6 @@
 import './css/coding.css';
 import AceEditor from 'react-ace';
-/*import "ace-builds/src-noconflict/mode-python";
-import "ace-builds/src-noconflict/mode-c_cpp";
-import "ace-builds/src-noconflict/theme-monokai";
-import "ace-builds/src-noconflict/ext-language_tools";
-import "ace-builds/src-noconflict/ext-spellcheck";
-import "ace-builds/src-noconflict/ext-searchbox";
-import "ace-builds/src-noconflict/ext-beautify";*/
+import Preloader from './Preloader'
 import "brace/mode/c_cpp";
 import "brace/mode/python";
 import "brace/ext/modelist";
@@ -24,6 +18,7 @@ import axiosInstance from '../axios';
 const Coding = () => {
     const history = useHistory();
     const { id } = useParams();
+    
     const [language, setLanguage] = useState('py');
     const [question, setQuestion] = useState(1);
     const [quesData, setQuesData] = useState([{
@@ -45,6 +40,7 @@ const Coding = () => {
         axiosInstance.get('codingpage/').then((res) => {
             console.log(res.data);
             setQuesData(res.data);
+            
         });
         console.log(quesData);
     }, [setQuesData]);
@@ -124,6 +120,8 @@ const Coding = () => {
         }
     }
 
+
+  
 
     return ( 
            

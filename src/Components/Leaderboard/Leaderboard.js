@@ -4,7 +4,7 @@ import './Leaderboard.css';
 import React, { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate';
 import TitleLeader from "./TitleLeader";
-import UserRank from "./UserRank";
+
 import axiosInstance from '../../axios';
 import Preloader from '../Preloader';
 
@@ -47,7 +47,7 @@ const Leaderboard = () => {
                         data.rank%2!==0 && <tr className="tablerow" style={{height:"2vw"}}><LeaderRow data={data}/></tr> ||
                         data.rank%2!==0 || <tr className="tablerow"><LeaderRow data={data} /></tr>
                     ))}
-                <UserRank/>
+            
             </Table>
             <ReactPaginate
                 previousLabel={"Previous"}
