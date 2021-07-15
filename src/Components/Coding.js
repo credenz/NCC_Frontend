@@ -123,6 +123,36 @@ const Coding = () => {
     }
 
 
+        let fileReader;
+        
+        const handleFileRead = (e) => {
+          const content = fileReader.result;
+          console.log(content);
+          setCode(content);
+          // … do something with the 'content' …
+        };
+        
+        const handleFileChosen = (file) => {
+          var extension =file.name.split('.').pop().toLowerCase();
+          if(extension==="cpp" || extension==="c" || extension==="py" )
+          {
+            fileReader = new FileReader();
+            fileReader.onloadend = handleFileRead;
+            fileReader.readAsText(file);
+          }
+          else {alert("Uploading only .c, .cpp & .py files is allowed.");}
+        
+        return <div className='upload-expense'>
+          <input
+            type='file'
+            id='file'
+            className='input-file'
+            accept={'.cpp','.py','.c'}
+            onChange={e => handleFileChosen(e.target.files[0])}
+          />
+        </div>;
+      };
+    
   
 
     return ( 
@@ -247,7 +277,7 @@ const Coding = () => {
 
                             <Form className="d-flex file-bod ml-auto mr-3">
                                 <Form.Group className="file">
-                                    <Form.File id="file-input" name="file-input" hidden/>
+                                    <Form.File id="file-input" name="file-input" onChange={(e) => handleFileChosen(e.target.files[0])} hidden/>
                                     <label for="file-input" class="inp">Choose File</label>
                                 </Form.Group>
                             </Form>
