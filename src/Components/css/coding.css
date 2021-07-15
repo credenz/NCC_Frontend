@@ -55,8 +55,8 @@
 pre{
     
     color:white !important;
-        overflow-y: auto;
-       overflow-x: hidden;  
+     
+       overflow-y: hidden;  
        white-space: pre-wrap 
     }
 .custom-area{
