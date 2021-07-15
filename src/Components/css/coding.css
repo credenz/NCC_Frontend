@@ -53,9 +53,12 @@
     color:white;
 }
 pre{
+    
     color:white !important;
-    overflow: hidden !important;
-}
+        overflow-y: auto;
+       overflow-x: hidden;  
+       white-space: pre-wrap 
+    }
 .custom-area{
     background:linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
