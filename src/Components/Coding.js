@@ -14,6 +14,8 @@ import {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router';
 import axiosInstance from '../axios';
 
+import 'katex/dist/katex.min.css';
+var Latex = require('react-latex');
 
 const Coding = () => {
     const history = useHistory();
@@ -154,49 +156,65 @@ const Coding = () => {
                                 
                                 <div className="question mb-5 codingtext">
                                     <pre>
+                                    <Latex>
                                     {`${quesData[question - 1].question_desc}`}
+                                    </Latex>
                                     </pre>
                                 </div>
                                 <div className="mb-3 codingtext">
                                     INPUT FORMAT
                                     <br />
                                     <pre>
+                                    <Latex>
                                     {`${quesData[question - 1].iformat}`}
+                                    </Latex>
                                     </pre>
                                    
                                 </div>
                                 <div className="mb-3 codingtext">
                                     CONSTRAINTS<br />
                                     <pre>
+                                    <Latex>
                                     {`${quesData[question - 1].constraints}`}
+                                    </Latex>
                                      </pre>
                                 </div>
                     
                                 <div className="mb-3 codingtext">
                                     OUTPUT FORMAT<br />
                                     <pre>
-                                        {`${quesData[question - 1].oformat}`}
-                                        </pre>
+                                    <Latex>
+                                    {`${quesData[question - 1].oformat}`}
+                                    </Latex>
+                                    </pre>
                                 </div>
                     
                                 <div className="mb-3 codingtext">
                                     SAMPLE INPUT<br />
                                     <pre>
+                                    <Latex>
                                     {`${ quesData[question - 1].sampleInput }`}
+                                    </Latex>
                                     </pre>
                                   
                                 </div>
                     
                                 <div className="mb-3 codingtext">
                                     SAMPLE OUTPUT<br />
-                                    <pre>{`${quesData[question - 1].sampleOutput}` }</pre>
+                                    <pre>
+                                    <Latex>
+                                    {`${quesData[question - 1].sampleOutput}` }
+                                    </Latex>
+                                    </pre>
                                   
                                 </div>
                     
                                 <div className="mb-3 codingtext">
                                     EXPLANATION<br />
                                     <pre>
+                                    <Latex>
                                         {`${quesData[question - 1].explanation }`}
+                                    </Latex>
                                     </pre>
                                     
                                 </div>
