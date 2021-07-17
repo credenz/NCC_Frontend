@@ -38,14 +38,22 @@ const Coding = () => {
         });
     }, [setUserData]);
 
+    // useEffect(() => {
+    //     axiosInstance.get('codingpage/').then((res) => {
+    //         console.log(res.data);
+    //         setQuesData(res.data);
+            
+    //     });
+    //     console.log(quesData);
+    // }, [setQuesData]);
+
     useEffect(() => {
-        axiosInstance.get('codingpage/').then((res) => {
+     
+        axiosInstance.post('codingpage/', {qno: id}).then((res) => {
             console.log(res.data);
             setQuesData(res.data);
-            
         });
-        console.log(quesData);
-    }, [setQuesData]);
+    }, [setQuesData])
 
     const [code, setCode] = useState("");
     let [consoleResponse, setConsoleResponse] = useState({status: "Console", output: ""});
@@ -100,10 +108,7 @@ const Coding = () => {
         setCode(e);
     }
     
-    const handleQuestionChange = (e) => {
-        setQuestion(e.target.value);
-        history.push('/coding/' + e.target.value + '/');
-    }
+    
 
     const clearCode = () =>{
        setCode("");
@@ -166,17 +171,7 @@ const Coding = () => {
                                     <td>Score : {userData.totalScore} </td>
                                 </tr>
                             </table>
-                            <select id="dropdown-basic" class="ml-auto que-no" value={id} onChange={handleQuestionChange}>
-                                    <option class="bg-light opt" value={1}>Q.1</option>
-                                    <option class="bg-light opt" value={2}>Q.2</option>
-                                    <option class="bg-light opt" value={3}>Q.3</option>
-                                    <option class="bg-light opt" value={4}>Q.4</option>
-                                    <option class="bg-light opt" value={5}>Q.5</option>
-                                    <option class="bg-light opt" value={6}>Q.6</option>
-                                    <option class="bg-light opt" value={7}>Q.7</option>
-                                    <option class="bg-light opt" value={8}>Q.8</option>
-                                    
-                                </select>
+                           
                         </div>
                         
                         <div className="card que-card">
@@ -188,7 +183,7 @@ const Coding = () => {
                                 <div className="question mb-5 codingtext">
                                     <pre>
                                     <Latex>
-                                    {`${quesData[question - 1].question_desc}`}
+                                    {`${quesData[0].question_desc}`}
                                     </Latex>
                                     </pre>
                                 </div>
@@ -197,7 +192,7 @@ const Coding = () => {
                                     <br />
                                     <pre>
                                     <Latex>
-                                    {`${quesData[question - 1].iformat}`}
+                                    {`${quesData[0].iformat}`}
                                     </Latex>
                                     </pre>
                                    
@@ -206,7 +201,7 @@ const Coding = () => {
                                     CONSTRAINTS<br />
                                     <pre>
                                     <Latex>
-                                    {`${quesData[question - 1].constraints}`}
+                                    {`${quesData[0].constraints}`}
                                     </Latex>
                                      </pre>
                                 </div>
@@ -215,7 +210,7 @@ const Coding = () => {
                                     OUTPUT FORMAT<br />
                                     <pre>
                                     <Latex>
-                                    {`${quesData[question - 1].oformat}`}
+                                    {`${quesData[0].oformat}`}
                                     </Latex>
                                     </pre>
                                 </div>
@@ -224,7 +219,7 @@ const Coding = () => {
                                     SAMPLE INPUT<br />
                                     <pre>
                                     <Latex>
-                                    {`${ quesData[question - 1].sampleInput }`}
+                                    {`${ quesData[0].sampleInput }`}
                                     </Latex>
                                     </pre>
                                   
@@ -234,7 +229,7 @@ const Coding = () => {
                                     SAMPLE OUTPUT<br />
                                     <pre>
                                     <Latex>
-                                    {`${quesData[question - 1].sampleOutput}` }
+                                    {`${quesData[0].sampleOutput}` }
                                     </Latex>
                                     </pre>
                                   
@@ -244,7 +239,7 @@ const Coding = () => {
                                     EXPLANATION<br />
                                     <pre>
                                     <Latex>
-                                        {`${quesData[question - 1].explanation }`}
+                                        {`${quesData[0].explanation }`}
                                     </Latex>
                                     </pre>
                                     
