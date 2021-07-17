@@ -1,10 +1,23 @@
 import './css/team.css';
+import {Button} from 'react-bootstrap'
+import { useHistory } from "react-router-dom";
 
 const OurTeam = () => {
+  let history = useHistory();
+  const goBack = () => {
+      history.goBack()
+  }
+
     return(
 
-        <div className="container">
+
+
+      <div className="container">
+      <Button onClick={goBack} className="close-button" variant="light">
+      X
+      </Button>
         <div className="row mar">
+        
           <div className="col-12 col-sm-6 col-md-4 col-lg-3">
             <div className="our-team">
               <div className="picture">

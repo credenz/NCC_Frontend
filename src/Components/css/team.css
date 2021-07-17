@@ -9,7 +9,18 @@
     margin-top:1vw;
     margin-bottom:3vw;
   }
-
+  .close-button {
+    float: right;
+    margin-top: 5px;
+    margin-right: 20px;
+    border-radius: 100%;
+    transform: scale(1.15);
+  }
+ .close-button:hover {
+    background-color: rgb(219, 219, 219);
+    color: #474747;
+    transform: scale(1);
+  }
 .mar{
     margin-top:2vw;
 }
