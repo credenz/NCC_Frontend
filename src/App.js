@@ -16,12 +16,13 @@ import PrivateRoute from './utils/PrivateRoute';
 import PublicRoute from './utils/PublicRoute';
 
 function App() {
+  const finalTime = new Date("July 18, 2021 14:48:00").getTime();
   return (
     <Router>
         <div className="container-fluid">
          
             <div className="Header">
-              <Navbar />
+              <Navbar finalTime={finalTime} />
             </div>
 
             <div className="main-content">
