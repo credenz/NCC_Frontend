@@ -127,7 +127,6 @@ const Coding = () => {
         
         const handleFileRead = (e) => {
           const content = fileReader.result;
-          console.log(content);
           setCode(content);
           // … do something with the 'content' …
         };
@@ -174,6 +173,8 @@ const Coding = () => {
                                     <option class="bg-light opt" value={4}>Q.4</option>
                                     <option class="bg-light opt" value={5}>Q.5</option>
                                     <option class="bg-light opt" value={6}>Q.6</option>
+                                    <option class="bg-light opt" value={7}>Q.7</option>
+                                    <option class="bg-light opt" value={8}>Q.8</option>
                                     
                                 </select>
                         </div>

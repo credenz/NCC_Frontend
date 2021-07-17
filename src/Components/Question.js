@@ -26,6 +26,8 @@ const Questions = () => {
                 { id: allQuestions[3].pk, qno: 4, submit: allQuestions[3].total_attempts, progress: 100 * parseInt(allQuestions[3].correct_attempts) / parseInt(allQuestions[3].total_attempts) },
                 { id: allQuestions[4].pk, qno: 5, submit: allQuestions[4].total_attempts, progress: 100 * parseInt(allQuestions[4].correct_attempts) / parseInt(allQuestions[4].total_attempts) },
                 { id: allQuestions[5].pk, qno: 6, submit: allQuestions[5].total_attempts, progress: 100 * parseInt(allQuestions[5].correct_attempts) / parseInt(allQuestions[5].total_attempts) },
+                { id: allQuestions[6].pk, qno: 7, submit: allQuestions[6].total_attempts, progress: 100 * parseInt(allQuestions[6].correct_attempts) / parseInt(allQuestions[6].total_attempts) },
+                { id: allQuestions[7].pk, qno: 8, submit: allQuestions[7].total_attempts, progress: 100 * parseInt(allQuestions[7].correct_attempts) / parseInt(allQuestions[7].total_attempts) },
             ]);
             setQuestionData({ loading: false, questions: null });
             console.log(res.data);

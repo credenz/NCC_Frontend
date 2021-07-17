@@ -46,7 +46,7 @@ const Submission = () => {
                         initialPage={0}
                      	previousLabel={"Questions"}
                         nextLabel={"Next"}
-                        pageCount={6}
+                        pageCount={8}
                         onPageChange={(e) => {setQuestion(e.selected + 1); console.log(e.selected + 1)}}
                         containerClassName={"paginate"}
                         subContainerClassName={"page paginate"}
