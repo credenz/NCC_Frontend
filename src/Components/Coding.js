@@ -1,4 +1,5 @@
 import './css/coding.css';
+import './css/questionPreloader.css'
 import AceEditor from 'react-ace';
 import Preloader from './Preloader'
 import "brace/mode/c_cpp";
@@ -17,6 +18,12 @@ import axiosInstance from '../axios';
 import 'katex/dist/katex.min.css';
 var Latex = require('react-latex');
 
+const QuestionPreloader = ()=>{
+    return (
+  		    <div className="qloader-p" />
+    )
+}
+
 const Coding = () => {
     const history = useHistory();
     const { id } = useParams();
@@ -27,6 +34,7 @@ const Coding = () => {
         question_desc: "Loading...",
         pk: 1
     }]);
+    const [questionLoading, setQuestionLoading] = useState(false)
     const [userData, setUserData] = useState({
         totalScore: 'Loading...'
     })
@@ -48,10 +56,11 @@ const Coding = () => {
     // }, [setQuesData]);
 
     useEffect(() => {
-     
+        setQuestionLoading(true)
         axiosInstance.post('codingpage/', {qno: id}).then((res) => {
             console.log(res.data);
             setQuesData(res.data);
+            setQuestionLoading(false)
         });
     }, [setQuesData])
 
@@ -174,12 +183,13 @@ const Coding = () => {
                            
                         </div>
                         
-                        <div className="card que-card">
+                            <div className="card que-card">
                             <div className="card-header text-center align-items-center">
                                 <h5>Problem Statement</h5>
                             </div>
+                            
                             <div className="card-body que-body" id="scroll">
-                                
+                                {questionLoading? <QuestionPreloader />: <>
                                 <div className="question mb-5 codingtext">
                                     <pre>
                                     <Latex>
@@ -243,9 +253,12 @@ const Coding = () => {
                                     </Latex>
                                     </pre>
                                     
-                                </div>
+                                </div></>}
+                                
                             </div>
                         </div>
+                        
+                        
                         
                         <div className="check d-flex align-items-left mt-4 mb-4">
                             <label><input type="checkbox" for="input" name="input" /><span className="ml-2">Custom Input</span></label>

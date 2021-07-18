@@ -8,6 +8,16 @@
     cursor:pointer;
     margin-top:1vw;
     margin-bottom:3vw;
+    width:240px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .name, .pos{
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  .web-team{
+    padding-top: 20px;
   }
   .close-button {
     float: right;

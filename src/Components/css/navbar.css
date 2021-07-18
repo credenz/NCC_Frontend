@@ -28,6 +28,7 @@
     position: relative;
     color:white;
     margin-right:1.5vw;
+    font-size: 20px;
 }
   .no:hover{
     color:white;
@@ -43,7 +44,7 @@
     color: transparent;
     width: 0%;
     content: "";
-    height: 3vw;
+    /* height: 3vw; */
     transition: all 0.25s;
     border-radius: 3px;
   }
@@ -54,6 +55,7 @@
   .navbar .navbar-nav .currentpage::after{
     width: 100%;
     color:#fff !important;
+    padding:1.2em;
   }
 
   /* Media Query */

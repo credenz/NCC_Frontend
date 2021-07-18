@@ -9,6 +9,7 @@ const Login = () => {
         username: '',
         password: '',
     });
+    const [isLogging, setIsLogging] = useState(false)
 
     const handleUsernameChange = (event) => {
         setLogin({
@@ -41,6 +42,7 @@ const Login = () => {
             axiosInstance.defaults.headers['Authorization'] = 
                         'Token ' + localStorage.getItem('access_token');
             history.push('/instructions');
+            setIsLogging(false)
             console.log(res.status);
             if (res.status !== 200) {
                 alert('Wrong Credentials')
@@ -49,6 +51,7 @@ const Login = () => {
         })
         .catch((err) => {
             if (err.status !== 200) {
+                setIsLogging(false)
                 alert('Wrong Credentials')
             }
         })
@@ -94,11 +97,11 @@ const Login = () => {
                                 </div>
                                 <div className="input-group mb-4">
                                     <div className="input-group-prepend">
-                                        <span className="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <span className="input-group-text"><i className="fa fa-lock"></i></span>
                                     </div>
                                     <input type="password" className="form-control txt" placeholder="Password" value={login.password} onChange={handlePasswordChange}/>
                                 </div>
-                                    <button type="submit" className="btn btn-info btn-block bts">Login</button>
+                                    <button type="submit" className={isLogging? 'btn btn-info btn-block bts disabled':'btn btn-info btn-block bts'} onClick={()=>setIsLogging(true)}>Login</button>
                             </form>
                     </div>
                 

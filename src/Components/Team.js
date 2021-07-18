@@ -10,15 +10,15 @@ const OurTeam = () => {
 
     return(
 
-
-
-      <div className="container">
-      <Button onClick={goBack} className="close-button" variant="light">
+<div className='web-team'>
+<Button onClick={goBack} className="close-button" variant="light">
       X
       </Button>
-        <div className="row mar">
+      <div className="container">
+      
+        <div className="row mar d-flex justify-content-around">
         
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -48,7 +48,7 @@ const OurTeam = () => {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -78,7 +78,7 @@ const OurTeam = () => {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -108,7 +108,7 @@ const OurTeam = () => {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -140,7 +140,7 @@ const OurTeam = () => {
           </div>
         </div>
       </div>
-      
+      </div>
     );
 }
 
