@@ -75,6 +75,7 @@ pre{
     height:30vw !important;
     width:44vw !important;
     font-size: 15px !important;
+    font-family : monospace !important;
 }
 .score{
     background: #26A69A;

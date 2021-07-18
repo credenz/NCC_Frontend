@@ -45,8 +45,8 @@ import './Timer.css'
         } else {
           minute>=10 ? setMin(minute) : setMin(`0`+minute)
           second >= 10 ? setSec(second) : setSec(`0` + second)
-          // hours >= 10 ? setSec(hours) : setSec(`0` + hours)
-          setHrs(hours);
+          hours >= 10 ? setHrs(hours) : setHrs(`0` + hours)
+          // setHrs(hours);
         }
       }, 1000);
     };

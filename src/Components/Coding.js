@@ -297,8 +297,12 @@ const Coding = () => {
                          className="edit"  placeholder="Type your code here" showPrintMargin={false}
                          showGutter={true}
                          onChange={ handleCodingChange }
+                         fontSize={15}
                          value={code}
+                         highlightActiveLine={true}
                          setOptions={{
+                            enableBasicAutocompletion: true,
+                            enableLiveAutocompletion: true,
                             enableSnippets: true,
                             showLineNumbers: true, 
                             tabSize: 4,
