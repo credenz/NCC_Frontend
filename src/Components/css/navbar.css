@@ -32,6 +32,7 @@
 }
   .no:hover{
     color:white;
+   
   }
   .no::after {
     position: absolute;
@@ -44,13 +45,15 @@
     color: transparent;
     width: 0%;
     content: "";
-    /* height: 3vw; */
+    height: 3vw; 
     transition: all 0.25s;
     border-radius: 3px;
   }
   .no:hover::after {
     width: 100%;
     color:#fff !important;
+    background-color: #26A69A;
+    height:3.5vw;
   }
   .navbar .navbar-nav .currentpage::after{
     width: 100%;

@@ -4,7 +4,7 @@ import './Leaderboard.css';
 import React, { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate';
 import TitleLeader from "./TitleLeader";
-
+import UserRank from './UserRank';
 import axiosInstance from '../../axios';
 import Preloader from '../Preloader';
 
@@ -29,14 +29,14 @@ const Leaderboard = () => {
         })
     }, [setData, page]);
 
-    
-   
+    const [result, setResult] = useState({});
 
+    
     if (isLoading) return <Preloader />
 
     return ( 
         <div className="leaderboard">
-            <Table striped borderless hover responsive className="leadertable">
+            <Table striped borderless hover className="leadertable">
                 <thead>
                     
                         <TitleLeader/>
@@ -44,19 +44,24 @@ const Leaderboard = () => {
                 </thead>
                 
                     {data.map((data)=>(
-                        data.rank%2!==0 && <tr className="tablerow" style={{height:"2vw"}}><LeaderRow data={data}/></tr> ||
+                        data.rank%2!==0 && <tr className="tablerow"><LeaderRow data={data}/></tr> ||
                         data.rank%2!==0 || <tr className="tablerow"><LeaderRow data={data} /></tr>
                     ))}
+
+                <UserRank data={data}/>
+               
             
             </Table>
+            <div className="row d-flex justify-content-center">
             <ReactPaginate
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
-              pageCount={data[0].page_range.length}
+                pageCount={data[0].page_range.length}
                 onPageChange={(e) => {setPage(e.selected + 1); console.log(e.selected + 1)}}
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}
                 activeClassName={"active"} />
+            </div>
         </div>
      );
 }

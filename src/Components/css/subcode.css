@@ -42,3 +42,9 @@
         margin-top:-4vw;
     }
 }
+
+@media(min-width:1440px){
+    .code{
+        height:34rem !important;
+    }
+}

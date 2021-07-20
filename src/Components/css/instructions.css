@@ -86,12 +86,12 @@
     color: white;
     top: 50%;
     transform: translateY(-50%);
-    left:2px;
+    left:2.3px;
 }
 .confirm-txt{
     position: relative;
     bottom:0.25vw;
-    font-size:20px;
+    font-size:18px;
 }
 
 /* Media Query */
@@ -130,7 +130,7 @@
         color: white;
         top: 51%;
         transform: translateY(-50%);
-        left:3px;
+        left:3.2px;
     }
     .confirm-txt{
         position: relative;

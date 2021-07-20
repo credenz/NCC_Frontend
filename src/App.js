@@ -16,7 +16,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import PublicRoute from './utils/PublicRoute';
 
 function App() {
-  const finalTime = new Date("July 20, 2021 12:00:00").getTime();
+  const finalTime = new Date("July 21, 2021 12:00:00").getTime();
   return (
     <Router>
         <div className="container-fluid">

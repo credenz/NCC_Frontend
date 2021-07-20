@@ -27,7 +27,7 @@ const QuestionPreloader = ()=>{
 const Coding = () => {
     const history = useHistory();
     const { id } = useParams();
-    
+   
     const [language, setLanguage] = useState('py');
     const [question, setQuestion] = useState(1);
     const [quesData, setQuesData] = useState([{
@@ -83,6 +83,8 @@ const Coding = () => {
                 setConsoleResponse(res.data.console_out);
                 history.push('/testcase', res.data)
             })
+
+        alert("Your Code is being submitted....")
     }
 
     const handleLoadBuffer = () => {
@@ -166,7 +168,7 @@ const Coding = () => {
         </div>;
       };
     
-  
+     
 
     return ( 
            
@@ -306,7 +308,7 @@ const Coding = () => {
                             enableSnippets: true,
                             showLineNumbers: true, 
                             tabSize: 4,
-                        }}></AceEditor>
+                        }}/>
                     </div>
 
                     <div className="buttons d-flex mt-4 mb-4">

@@ -1,12 +1,12 @@
 import './Leaderboard.css';
-const UserRank = () => {
+const UserRank = ({data}) => {
     return ( 
         <div className="userrank">
             <td>
-                <p className="data">Rank</p>
+                <p className="data">{data.rank}</p>
             </td>
             <td>
-                <p className="datauser">Username</p>
+                <p className="datauser">{data.username}</p>
             </td>
             <td>
                 <p className="data">Q1</p>
@@ -27,7 +27,7 @@ const UserRank = () => {
                 <p className="data">Q6</p>
             </td>
             <td>
-                <p className="datascore">Total</p>
+                <p className="datascore">{data.totalScore}</p>
             </td>
         </div>
      );

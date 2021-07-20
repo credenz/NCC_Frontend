@@ -30,12 +30,6 @@ const LeaderRow = ({ data }) => {
                 <td>
                     <p className="data">{data.scorelist[5]}</p>
                 </td>
-                <td>
-                    <p className="data">{data.scorelist[6]}</p>
-                </td>
-                <td>
-                    <p className="data">{data.scorelist[7]}</p>
-                </td>
 
                 <td>
                     <p className="datascore">{data.totalScore}</p>
