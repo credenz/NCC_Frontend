@@ -89,7 +89,7 @@ const Coding = () => {
 
     const handleLoadBuffer = () => {
         axiosInstance.post('loadbuffer/', {
-            qno: question,
+            qno: id,
         })
         .then((res) => {
             console.log(res.data);
