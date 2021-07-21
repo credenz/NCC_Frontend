@@ -9,22 +9,22 @@ const UserRank = ({data}) => {
                 <p className="datauser">{data.username}</p>
             </td>
             <td>
-                <p className="data">Q1</p>
+                <p className="data">{data.scorelist[0]}</p>
             </td>
             <td>
-                <p className="data">Q2</p>
+                <p className="data">{data.scorelist[1]}</p>
             </td>
             <td>
-                <p className="data">Q3</p>
+                <p className="data">{data.scorelist[2]}</p>
             </td>
             <td>
-                <p className="data">Q4</p>
+                <p className="data">{data.scorelist[3]}</p>
             </td>
             <td>
-                <p className="data">Q5</p>
+                <p className="data">{data.scorelist[4]}</p>
             </td>
             <td>
-                <p className="data">Q6</p>
+                <p className="data">{data.scorelist[5]}</p>
             </td>
             <td>
                 <p className="datascore">{data.totalScore}</p>

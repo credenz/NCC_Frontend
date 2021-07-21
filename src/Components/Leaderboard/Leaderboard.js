@@ -30,7 +30,12 @@ const Leaderboard = () => {
     }, [setData, page]);
 
     const [result, setResult] = useState({});
-
+    useEffect(() => {
+        axiosInstance.get('userstats/').then((res) => {
+            setResult(res.data);
+            // console.log(res.data);
+        });
+    }, [setResult]);
     
     if (isLoading) return <Preloader />
 
@@ -48,7 +53,7 @@ const Leaderboard = () => {
                         data.rank%2!==0 || <tr className="tablerow"><LeaderRow data={data} /></tr>
                     ))}
 
-                <UserRank data={data}/>
+                <UserRank data={result}/>
                
             
             </Table>
