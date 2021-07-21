@@ -27,7 +27,7 @@ const QuestionPreloader = ()=>{
 const Coding = () => {
     const history = useHistory();
     const { id } = useParams();
-   
+   const[isSubmitted, setIsSubmitted] = useState(false)
     const [language, setLanguage] = useState('py');
     const [question, setQuestion] = useState(1);
     const [quesData, setQuesData] = useState([{
@@ -46,14 +46,7 @@ const Coding = () => {
         });
     }, [setUserData]);
 
-    // useEffect(() => {
-    //     axiosInstance.get('codingpage/').then((res) => {
-    //         console.log(res.data);
-    //         setQuesData(res.data);
-            
-    //     });
-    //     console.log(quesData);
-    // }, [setQuesData]);
+
 
     useEffect(() => {
         setQuestionLoading(true)
@@ -72,6 +65,7 @@ const Coding = () => {
         e.preventDefault();
         console.log(code);
         console.log(language);
+        setIsSubmitted(true)
         axiosInstance
             .post('codesubmit/',{
                 qno: id,
@@ -82,9 +76,10 @@ const Coding = () => {
                 console.log(res.data);
                 setConsoleResponse(res.data.console_out);
                 history.push('/testcase', res.data)
+                setIsSubmitted(false)
             })
 
-        alert("Your Code is being submitted....")
+        
     }
 
     const handleLoadBuffer = () => {
@@ -157,18 +152,13 @@ const Coding = () => {
           }
           else {alert("Uploading only .c, .cpp & .py files is allowed.");}
         
-        return <div className='upload-expense'>
-          <input
-            type='file'
-            id='file'
-            className='input-file'
-            accept={'.cpp','.py','.c'}
-            onChange={e => handleFileChosen(e.target.files[0])}
-          />
-        </div>;
       };
     
      
+    if (isSubmitted)
+        return (
+            <Preloader/>
+        )
 
     return ( 
            
