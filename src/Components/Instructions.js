@@ -4,8 +4,20 @@ import { useState } from 'react';
 const Instructions = () => {
 
     const inst = [
-        { description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Impedit', key:0},
-        { description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Impedit', key:1}
+        { description: 'This round comprises of 6 questions.', key:0},
+        { description: 'All questions have marking scheme of +100 for right submissions.', key:1},
+        { description: 'FOR SENIORS: There is no partial marking for the Seniors.', key:2},
+        { description: 'FOR JUNIORS: Partial marking will be given according to the test cases passed.', key:3},
+        { description: 'Only C/C++/python are available for coding.', key:4},
+        { description: 'Player can create their own sample test cases for testing.', key:5},
+        { description: 'Player can choose any editor they want or use the one provided by us.', key:6},
+        { description: 'Latest submission will be save in the buffer, you can view that using the load buffer button provided.', key:7},
+        { description: 'The Duration of the round is 2 hours.', key:8},
+        { description: 'Players may view all their submissions on Submissions page.', key:9},
+        { description: 'Players can anytime view their Rank on Leaderboard page.', key:10},
+        { description: 'Code plagiarism isn\'t allowed, anyone found doing so will be disqualified.', key:11},
+
+
       
     ];
 
