@@ -1,7 +1,6 @@
 import './Leaderboard.css';
 import { Table } from "react-bootstrap";
 const LeaderRow = ({ data }) => {
-    console.log(data)
 
     return ( 
         <div className="leaderrow">
