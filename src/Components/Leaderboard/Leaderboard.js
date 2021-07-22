@@ -22,7 +22,6 @@ const Leaderboard = () => {
     ])
     useEffect(() => {
         axiosInstance.get('leaderboard/?page=' + page).then((res) => {
-            console.log(res.data);
             setData(res.data);
            
             setIsLoading(false)
@@ -33,7 +32,6 @@ const Leaderboard = () => {
     useEffect(() => {
         axiosInstance.get('userstats/').then((res) => {
             setResult(res.data);
-            // console.log(res.data);
         });
     }, [setResult]);
     
@@ -62,7 +60,7 @@ const Leaderboard = () => {
                 previousLabel={"Previous"}
                 nextLabel={"Next"}
                 pageCount={data[0].page_range.length}
-                onPageChange={(e) => {setPage(e.selected + 1); console.log(e.selected + 1)}}
+                onPageChange={(e) => {setPage(e.selected + 1);}}
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}
                 activeClassName={"active"} />

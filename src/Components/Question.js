@@ -28,7 +28,7 @@ const Questions = () => {
                 { id: allQuestions[5].pk, qno: 6, submit: allQuestions[5].total_attempts, progress: 100 * parseInt(allQuestions[5].correct_attempts) / parseInt(allQuestions[5].total_attempts) }
             ]);
             setQuestionData({ loading: false, questions: null });
-            console.log(res.data);
+           
         });
     }, [setQuestionData, setQues]);
 

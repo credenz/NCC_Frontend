@@ -42,7 +42,7 @@ const Coding = () => {
     useEffect(() => {
         axiosInstance.get('userstats/').then((res) => {
             setUserData(res.data);
-            console.log(res.data);
+            
         });
     }, [setUserData]);
 
@@ -51,7 +51,7 @@ const Coding = () => {
     useEffect(() => {
         setQuestionLoading(true)
         axiosInstance.post('codingpage/', {qno: id}).then((res) => {
-            console.log(res.data);
+            
             setQuesData(res.data);
             setQuestionLoading(false)
         });
@@ -63,8 +63,8 @@ const Coding = () => {
 
     const handleCodeSubmit = (e) => {
         e.preventDefault();
-        console.log(code);
-        console.log(language);
+        
+        
         setIsSubmitted(true)
         axiosInstance
             .post('codesubmit/',{
@@ -73,7 +73,7 @@ const Coding = () => {
                 code: code
             })
             .then((res) => {
-                console.log(res.data);
+                
                 setConsoleResponse(res.data.console_out);
                 history.push('/testcase', res.data)
                 setIsSubmitted(false)
@@ -87,10 +87,10 @@ const Coding = () => {
             qno: id,
         })
         .then((res) => {
-            console.log(res.data);
+            
             setCode(res.data.code);
             setLanguage(res.data.lang);
-            console.log(language);
+            
         })
     }
 
@@ -104,9 +104,9 @@ const Coding = () => {
                 ci: customInput,
             })
             .then((res) => {
-                console.log(res.data);
+               
                 setConsoleResponse(res.data);
-                console.log(consoleResponse);
+                
             });
     }
 

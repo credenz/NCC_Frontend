@@ -31,19 +31,19 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(login);
+        
         axiosInstance.post('login/', {
             username: login.username,
             password: login.password
         })
         .then((res) => {
-            console.log(res.data);
+            
             localStorage.setItem('access_token', res.data.token);
             axiosInstance.defaults.headers['Authorization'] = 
                         'Token ' + localStorage.getItem('access_token');
             history.push('/instructions');
             setIsLogging(false)
-            console.log(res.status);
+            
             if (res.status !== 200) {
                 alert('Wrong Credentials')
             }

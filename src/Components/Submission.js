@@ -19,18 +19,17 @@ const Submission = () => {
 
     const handlePageChange = (e) => {
         setQuestion(e.selected + 1);
-        console.log(question);
-        console.log(e);
+        
         
         axiosInstance.post('submissions/', {qno: question}).then((res) => {
-            console.log(res.data);
+            
             setSub(res.data);
         });
     }
     useEffect(() => {
-        console.log(question);
+        
         axiosInstance.post('submissions/', {qno: question}).then((res) => {
-            console.log(res.data);
+            
             setSub(res.data);
             setIsLoading(false)
         });
@@ -47,7 +46,7 @@ const Submission = () => {
                      	previousLabel={"Questions"}
                         nextLabel={"Next"}
                         pageCount={6}
-                        onPageChange={(e) => {setQuestion(e.selected + 1); console.log(e.selected + 1)}}
+                        onPageChange={(e) => {setQuestion(e.selected + 1); }}
                         containerClassName={"paginate"}
                         subContainerClassName={"page paginate"}
                         activeClassName={"active"} />
