@@ -18,7 +18,7 @@ const OurTeam = () => {
       
         <div className="row mar d-flex justify-content-around">
         
-          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
+          <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -48,7 +48,7 @@ const OurTeam = () => {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
+          <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -58,7 +58,7 @@ const OurTeam = () => {
               </div>
               <div className="team-content">
                 <h3 className="name">Atharva Naphade</h3>
-                <h5 className="pos">Web Developer</h5>
+                <h5 className="pos">Problem Setter</h5>
               </div>
               <ul className="social">
               <li>
@@ -78,7 +78,7 @@ const OurTeam = () => {
               </ul>
             </div>
           </div>
-          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
+          <div className="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
             <div className="our-team">
               <div className="picture">
                 <img
@@ -101,36 +101,6 @@ const OurTeam = () => {
                 <li>
                   <a
                     href="https://www.linkedin.com/in/anupam-patil-114b841b0"
-                    className="fa fa-linkedin"
-                    aria-hidden="true"
-                  />
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-            <div className="our-team">
-              <div className="picture">
-                <img
-                  className="img-fluid"
-                  src="./img/vz.png.jpeg"
-                />
-              </div>
-              <div className="team-content">
-                <h3 className="name">Vaidehi Zade</h3>
-                <h5 className="pos">Web Developer</h5>
-              </div>
-              <ul className="social">
-              <li>
-                  <a
-                    href="http://github.com/Vaidehizade"
-                    className="fa fa-github"
-                    aria-hidden="true"
-                  />
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/vaidehi-zade-173450191/"
                     className="fa fa-linkedin"
                     aria-hidden="true"
                   />
