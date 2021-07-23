@@ -5,8 +5,8 @@ import TestcaseCard from "./TestcaseCard";
 
 const Testcase = (props) => {
   const passedData = props.location.state;
-  console.log(passedData);
-  console.log(props.location.state);
+  // console.log(passedData);
+  // console.log(props.location.state);
   const List1 = [1, 2, 3].map((num) => <TestcaseCard val={num} status={passedData.test_case_status[num - 1]} />);
   const List2 = [4, 5, 6].map((num) => <TestcaseCard val={num} status={passedData.test_case_status[num - 1]}/>);
 
