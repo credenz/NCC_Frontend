@@ -86,27 +86,28 @@
     color: white;
     top: 50%;
     transform: translateY(-50%);
-    left:2px;
+    left:2.3px;
 }
 .confirm-txt{
     position: relative;
     bottom:0.25vw;
+    font-size:18px;
 }
 
 /* Media Query */
 
 @media(min-width:1500px){
     .inst-box{
-        font-size:25px;
-        margin-top: 3vw;
+        font-size:20px;
+        
     }
     .inst-title{
-        font-size:35px;
+        font-size:33px;
     }
     .pro{
         height:4vw;
         width:15vw;
-        font-size:32px;
+        font-size:28px;
     }
     .fa-hand-o-right{
         font-size:30px;
@@ -127,9 +128,9 @@
         content: "\2713";
         position: absolute;
         color: white;
-        top: 50%;
+        top: 51%;
         transform: translateY(-50%);
-        left:2px;
+        left:3.2px;
     }
     .confirm-txt{
         position: relative;
@@ -146,24 +147,25 @@
         width:80vw;
     }
     .inst-title{
-        width:60vw;
-        font-size:15px;
+        width:65vw;
         margin-bottom: 1vw;
     }
+    .inst-title h2{
+        font-size: 25px;
+    }
     .fa-lightbulb-o{
-        font-size:35px;
+        font-size:25px;
     }
     .inst-content{
         display:flex;
-        font-size: 17px;
+        font-size: 15px;
     }
     .pro{
-        width:40vw;
+        width:43vw;
         left:30%;
     }
     .confirm{
         height:max-content;
-        font-size: 14px;
     }
     .confirm > label input{
         height:15px;
@@ -177,8 +179,28 @@
         top:77%;
         left:5%;
     }
-    
-    
+    .confirm-txt{
+        font-size: 14px;
+    }
+}
+
+@media(max-width:387px){
+    .inst-content{
+        font-size:13px;
+    }
+    .confirm-txt{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:353px){
+    .pro{
+        width:55vw;
+        left:26%;
+    }
+    .inst-content{
+        font-size:11px;
+    }
 }
 
 

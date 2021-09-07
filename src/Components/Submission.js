@@ -1,44 +1,68 @@
 import './css/submission.css';
 import {ProgressBar,Table} from 'react-bootstrap';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import Code from './subcode';
+import axiosInstance from '../axios';
+import Preloader from './Preloader';
 
 const Submission = () => {
+    let counter = 0;
+    const [isLoading, setIsLoading] = useState(true)
     const [sub, setSub] = useState([
-        {id:0, subno:1, time:'00:00'},
-        {id:1, subno:2, time:'10:00'},
-        {id:2, subno:3, time:'00:56'},
-        {id:3, subno:4, time:'24:00'}
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
+        {accuracy:0, code: "loading....", submission_time:'00:00'},
 ]);
+    const [question, setQuestion] = useState(1);
+
+    const handlePageChange = (e) => {
+        setQuestion(e.selected + 1);
+        
+        
+        axiosInstance.post('submissions/', {qno: question}).then((res) => {
+            
+            setSub(res.data);
+        });
+    }
+    useEffect(() => {
+        
+        axiosInstance.post('submissions/', {qno: question}).then((res) => {
+            
+            setSub(res.data);
+            setIsLoading(false)
+        });
+    }, [setSub, question])
+    
+    if (isLoading) return <Preloader />
     return (
 
        <>
          <div className="row rcard">
             <div className="row">
                 <ReactPaginate
-                        initialPage={1}
+                        initialPage={0}
                      	previousLabel={"Questions"}
                         nextLabel={"Next"}
                         pageCount={6}
-                        onPageChange={console.log("click")}
+                        onPageChange={(e) => {setQuestion(e.selected + 1); }}
                         containerClassName={"paginate"}
                         subContainerClassName={"page paginate"}
                         activeClassName={"active"} />
             </div>
-
-            {sub.map((sub) =>(
+            {sub.map((su) =>(
                     <div className="col-12 col-sm-12">
-                        <div className="card sub-card" key={sub.id}>
-                            <h5 className="card-header text-center">Submission {sub.subno}</h5>
+                        <div className="card sub-card" key={su.status}>
+                            <h5 className="card-header text-center">Submission {counter+=1}</h5>
                             <div className="card-body text-center">
                                 <Table borderless className="info">
                                 <tbody>
                                 <tr>
-                                <td className="time">Time :- {sub.time}</td>
-                                <td><ProgressBar animated now={Math.floor(Math.random() * 100)} 
-                                className="progress1"label={`${Math.floor(Math.random()*100)}%`}  /></td>
-                                <td className="view"><Code /></td>
+                                <td className="time">Time :- {su.submission_time.substr(11, 5)}</td>
+                                <td><ProgressBar animated now={su.accuracy} 
+                                className="progress1"label={`${su.accuracy}%`}  /></td>
+                                <td className="views"><Code code={su.code}/></td>
                                 </tr>
                                 </tbody>
                                 </Table>

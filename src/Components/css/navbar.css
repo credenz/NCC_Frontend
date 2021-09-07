@@ -19,13 +19,20 @@
     background-color: rgba(0,0,0,0.9);
     z-index:5;
   }
+  .ncc-title{
+    margin-left:35%;
+    margin-top:1vw;
+    color:#fff;
+  }
   .no {
     position: relative;
     color:white;
     margin-right:1.5vw;
+    font-size: 20px;
 }
   .no:hover{
     color:white;
+   
   }
   .no::after {
     position: absolute;
@@ -38,39 +45,52 @@
     color: transparent;
     width: 0%;
     content: "";
-    height: 3vw;
+    height: 3vw; 
     transition: all 0.25s;
     border-radius: 3px;
   }
   .no:hover::after {
     width: 100%;
     color:#fff !important;
+    background-color: #26A69A;
+    height:3.5vw;
   }
   .navbar .navbar-nav .currentpage::after{
     width: 100%;
     color:#fff !important;
+    padding:1.2em;
   }
 
   /* Media Query */
 
 @media(max-width:425px){
-  .ctdlogo{
-    height:130px;
-    width:260px;
+  .no::after{
+    height:10vw;
+  }
+  .ncc-title{
+    margin-left:5% !important;
+    font-size: 20px;
+    margin-top:2vw;
   }
 }
-@media(max-width:325px){
-  .footer{
-    font-size:15px;
+
+@media(max-width:403px){
+  .ncc-title{
+    font-size: 14px;
   }
-  .ctdlogo{
-    height:100px;
-    width:200px;
+}
+@media(max-width:376px){
+  .ncc-title{
+    font-size: 14px;
   }
 }
 
 @media(min-width:1440px){
   .no::after{
-    height:2.3vw;
+    height:2.55vw;
+  }
+
+  .ncc-title{
+    margin-left: 38%;
   }
 }

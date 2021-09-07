@@ -1,34 +1,36 @@
 import './Leaderboard.css';
-const UserRank = () => {
+const UserRank = ({data}) => {
     return ( 
         <div className="userrank">
+            <b>
             <td>
-                <p className="data">Rank</p>
+                <p className="data">{data.rank}</p>
             </td>
             <td>
-                <p className="datauser">Username</p>
+                <p className="datauser">{data.username}</p>
             </td>
             <td>
-                <p className="data">Q1</p>
+                <p className="data">{data.scorelist[0]}</p>
             </td>
             <td>
-                <p className="data">Q2</p>
+                <p className="data">{data.scorelist[1]}</p>
             </td>
             <td>
-                <p className="data">Q3</p>
+                <p className="data">{data.scorelist[2]}</p>
             </td>
             <td>
-                <p className="data">Q4</p>
+                <p className="data">{data.scorelist[3]}</p>
             </td>
             <td>
-                <p className="data">Q5</p>
+                <p className="data">{data.scorelist[4]}</p>
             </td>
             <td>
-                <p className="data">Q6</p>
+                <p className="data">{data.scorelist[5]}</p>
             </td>
             <td>
-                <p className="datascore">Total</p>
+                <p className="datascore">{data.totalScore}</p>
             </td>
+            </b>
         </div>
      );
 }

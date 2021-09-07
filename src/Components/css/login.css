@@ -8,7 +8,7 @@
   }
   .input-group{
     outline:none;
-    width:20vw;
+    width:22vw;
   }
   .input-group:focus{
       color:#53e3a6;
@@ -19,8 +19,8 @@
     color:#53e3a6;
   }
   .form-box{
-    width:27vw;
-    height:30vw;
+    width:28vw;
+    height:28vw;
     background-color:rgba(0,0,0,0.5);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     display:flex;
@@ -28,7 +28,9 @@
     justify-content:center;
     align-items:center;
     border-radius:2%;
-    margin-bottom:2vw;
+    margin-top:7%;
+    margin-left:-20%;
+    
   }
   .header-form{
   margin-bottom:15px;
@@ -47,19 +49,20 @@
   }
 
   .ctdlogo{
-    height:150px;
-    width:300px;
+    height:100px;
+    width:200px;
     border-radius:2%;
-    transition: 0.5s;
+    margin-left:-30%;
+/*    transition: 0.5s;
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
-    animation-name: bounce;
+    animation-name: bounce;*/
     
   }
   
-  @keyframes bounce {
+/*  @keyframes bounce {
       0%, 100%, 20%, 50%, 80% {
           -webkit-transform: translateY(0);
           -ms-transform:     translateY(0);
@@ -75,16 +78,64 @@
           -ms-transform:     translateY(-5px);
           transform:         translateY(-5px)
       }
-  }
+  }*/
 
+h4 {
+	color: #100f10;
+	font-size: 6.7vw;
+	position: relative;
+	text-transform: uppercase;
+	-webkit-text-stroke: 0.3vw #f7f7fe;
+  margin-bottom:2vw;
+}
+
+h4::before {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	color: #26A69A;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	-webkit-text-stroke: 0vw #f7f7fe;
+	animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+.combined{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left:5%;
+  margin-top: 3%;
+}
+.present{
+  font-weight:bolder;
+  color:#fff;
+  margin-left:-90%;
+}
 /* NCC animation */
 
 .animate {
   font: 22em 'Montserrat';
-  width: 60vw;
-  height: 30vw;
-  margin-top:15%;
-  margin-left:-85%;
+  width: 46vw;
+  height: 19vw;
+  margin-left:-110%;
+  margin-top:-35%;
 }
 
 .text-copy {
@@ -131,24 +182,53 @@ animation-delay: -5s;
 @media(max-width:425px){
   .animate{
     font-size:22em;
-    width:96vw;
-    height:48vw;
-    margin-left:-6%;
-    
+    width:84vw;
+    height:42vw;
+    margin-left:3%;
+    margin-top:-15vw;
+  }
+  .combined{
+    margin-left:0;
   }
   .form-box{
-    height:90vw;
-    width:80vw;
+    height:80vw;
+    width:70vw;
     margin-top:-1%;
-    margin-left:4vw;
+    margin-left:12%;
+  }
+  h4{
+    font-size: 17vw;
+    margin-bottom:6vw;
   }
   .ctdlogo{
-    height:130px;
-    width:260px;
+    height:80px;
+    width:160px;
+    margin-top:15vw;
+    margin-left:28%;
+  }
+  .present{
+    margin-left:1vw;
   }
   .input-group{
     width:60vw;
   }
+}
+
+@media(max-width:390px){
+  .ctdlogo{
+    margin-left:26%;
+  }
+  .present{
+    margin-left:1.5vw;
+  }
+  .animate{
+    margin-top:-18vw;
+    margin-left:1%;
+    font-size:21em;
+    height:43vw;
+    width:86vw;
+  }
+
 }
 @media(max-width:375px){
   .form-box{
@@ -161,29 +241,55 @@ animation-delay: -5s;
   }
 }
 @media(max-width:325px){
-  .footer{
-    font-size:15px;
-  }
   .ctdlogo{
-    height:100px;
-    width:200px;
+    height:70px;
+    width:140px;
+    margin-left:24%;
+    margin-top:17vw;
+  }
+  .present{
+    margin-top:-2vw;
+  }
+  .animate{
+    margin-top:-23vw;
+    margin-left:-1%;
   }
   .input-group{
     width:70vw;
   }
+  h4{
+    font-size:22vw;
+  }
 }
 
-@media(min-width:1500px){
+@media(min-width:1650px){
   .animate{
-    margin-left:-180%;
+    margin-left:-130%;
+    height:15vw;
+    width:41vw;
   }
   .form-box{
-    height:27vw;
-    margin-left: 60%;
+    height:26vw;
+    width:26vw;
+    margin-left:55%;
+    margin-top:25%;
   }
   .ctdlogo{
-    height:200px;
-    width:400px;
+    height:120px;
+    width:240px;
+  }
+  .combined{
+    margin-top:9%;
+    margin-left:7%;
+  }
+  h4{
+    font-size:7vw;
+  }
+  .input-group{
+    margin-bottom:6vw;
+  }
+  .ncc-title{
+    margin-left:40%;
   }
 }
   

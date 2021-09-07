@@ -10,8 +10,8 @@ const TitleLeader = () => {
                 <td rowSpan="2">
                     <p className="datauser tuser">Username</p>
                 </td>
-                <td colSpan="6" >
-                    <p className="data">Question</p>
+                <td colSpan="8">
+                    <p className="data tques">Question</p>
                 </td>
                 <td rowSpan="2">
                     <p className="datascore tscore">Total Score</p>

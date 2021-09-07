@@ -1,50 +1,76 @@
-import React , {Component} from 'react';
+import React , {Component, useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import './css/login.css';
+import axiosInstance from '../axios';
 
-class login extends Component{
-    constructor(props){
-        super(props)
+const Login = () => {
+    const history = useHistory();
+    const [login, setLogin] = useState({
+        username: '',
+        password: '',
+    });
+    const [isLogging, setIsLogging] = useState(false)
 
-        this.state = {
-            username : '',
-            password : ''
-        
-        }
-    }
-    
-
-    handleUsernameChange = (event) => {
-        this.setState({
+    const handleUsernameChange = (event) => {
+        setLogin({
+            ...login,
             username : event.target.value
         
         })
         
     }
 
-    handlePasswordChange = (event) => {
-        this.setState({
+    const handlePasswordChange = (event) => {
+        setLogin({
+            ...login, 
             password : event.target.value
         })
         
     }
 
 
-    handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        }
+        
+        axiosInstance.post('login/', {
+            username: login.username,
+            password: login.password
+        })
+        .then((res) => {
+            
+            localStorage.setItem('access_token', res.data.token);
+            axiosInstance.defaults.headers['Authorization'] = 
+                        'Token ' + localStorage.getItem('access_token');
+            history.push('/instructions');
+            setIsLogging(false)
+            
+            if (res.status !== 200) {
+                alert('Wrong Credentials')
+            }
+
+        })
+        .catch((err) => {
+            if (err.status !== 200) {
+                setIsLogging(false)
+                alert('Wrong Credentials')
+            }
+        })
+    }   
 
         
 
-    render(){
+
         return ( 
             
     <div className="container">
         <div className='row'>
-            <div className="col-12 col-sm-2">
+            <div className="col-12 col-sm-2 combined d-flex">
+            <img src="./img/Logo.png" className="ctdlogo mb-4 bounce"></img>
+            <p className="present">Presents</p>
             <svg viewBox="0 0 960 300" className="animate">
                 <symbol id="s-text">
                     <text textAnchor="middle" x="50%" y="80%">NCC  </text>
-                    <text textAnchor="middle" x="52%" y="80%">NCC </text>
+                    <text textAnchor="middle" x="51%" y="80%">NCC </text>
                 </symbol>
                 <g className="g-ants">
                     <use xlinkHref="#s-text" className="text-copy" />
@@ -58,24 +84,24 @@ class login extends Component{
             <div className="col-md-4"></div>
             <div className='col-12 col-sm-2'>
                 <div className="form-box">
-                    <div className="head-form">
-                        <img src="./img/logo.png" className="ctdlogo mb-4 bounce"></img>
+                    <div className="head-form text-center">
+                    <h4 data-text="Login">Login</h4> 
                     </div>
                     <div className="body-form">
-                            <form onSubmit={this.handleSubmit}>
-                                <div className="input-group mb-3">
+                            <form onSubmit={handleSubmit}>
+                                <div className="input-group mb-4">
                                     <div className="input-group-prepend">
                                         <span className="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input type="text" className="form-control txt" placeholder="Username" value={this.state.username} onChange={this.handleUsernameChange} />
+                                    <input type="text" className="form-control txt" placeholder="Username" value={login.username} onChange={handleUsernameChange} />
                                 </div>
-                                <div className="input-group mb-3">
+                                <div className="input-group mb-4">
                                     <div className="input-group-prepend">
-                                        <span className="input-group-text"><i class="fa fa-lock"></i></span>
+                                        <span className="input-group-text"><i className="fa fa-lock"></i></span>
                                     </div>
-                                    <input type="password" className="form-control txt" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/>
+                                    <input type="password" className="form-control txt" placeholder="Password" value={login.password} onChange={handlePasswordChange}/>
                                 </div>
-                                    <button type="submit" className="btn btn-info btn-block bts">Login</button>
+                                    <button type="submit" className={isLogging? 'btn btn-info btn-block bts disabled':'btn btn-info btn-block bts'} onClick={()=>setIsLogging(true)}>Login</button>
                             </form>
                     </div>
                 
@@ -91,9 +117,9 @@ class login extends Component{
 
     }
 
-}
+
 
    
 
  
-export default login;
+export default Login;

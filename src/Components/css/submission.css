@@ -1,26 +1,15 @@
+.rcard{
+    display: flex;
+    justify-content: center;
+}
 .sub-card{
-    height:10vw;
+    height:9.3vw;
     width:70vw;
     background: linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
     margin-left:15%;
     margin-top:2vw;
     color:white;
-}
-.view{
-    width:10vw;
-    height:3vw;
-    background-color: transparent !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    font-size:15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-.view:hover{
-    box-shadow: none;
-    transform: scale(1.03);
 }
 .progress-bar{
     color:black;
@@ -37,7 +26,6 @@
     color:white;
 }
 .paginate {
-    margin-left:35vw;
     outline: none;
     color:white;
     list-style: none;
@@ -65,10 +53,10 @@
     .sub-card{
         height:30vw;
         width:90vw;
-        margin-left:2vw;
+        margin-left:7vw !important;
         margin-top:10vw;
     }
-    .view{
+    .views{
         width:15vw !important;
         height:7vw !important;
         margin-top:-1vw !important;
@@ -84,17 +72,24 @@
         font-size:14px !important;
     }
     .paginate{
-        margin-left:2vw ;
-        margin-top:13vw; 
+        margin-left:-5vw;
+        margin-top:17vw; 
     }
     .paginate>li>a {
-        padding: 6px 12px!important;
+        padding: 4px 8px!important;
     }
 }
 
 @media(max-width:375px){
     .paginate>li>a {
         padding: 5px 10px !important;
+    }
+}
+
+@media(max-width:340px){
+    .paginate>li>a {
+        padding: 4px 8px !important;
+        font-size: 14px;
     }
 }
 @media(max-width:1100px){

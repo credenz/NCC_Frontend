@@ -1,20 +1,46 @@
 import './css/quehub.css';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import {Table} from 'react-bootstrap';
 import {ProgressBar} from 'react-bootstrap';
+import axiosInstance from '../axios';
+import Preloader from './Preloader';
+
 
 const Questions = () => {
-    const [ques, setQues] = useState([
-        {id:0, qno:1, submit:Math.floor(Math.random()*100)},
-        {id:1, qno:2, submit:Math.floor(Math.random()*100)},
-        {id:2, qno:3, submit:Math.floor(Math.random()*100)},
-        {id:3, qno:4, submit:Math.floor(Math.random()*100)},
-        {id:4, qno:5, submit:Math.floor(Math.random()*100)},
-        {id:5, qno:6, submit:Math.floor(Math.random()*100)}
-    ]);
+    const history = useHistory();
+    const [ques, setQues] = useState([]);
+
+    const [questionData, setQuestionData] = useState({
+        loading: true,
+        questions: null,
+      })
+
+    useEffect(() => {
+        axiosInstance.get('questionhub/').then((res) => {
+            const allQuestions = res.data;
+            setQues([
+                { id: allQuestions[0].pk, qno: 1, submit: allQuestions[0].total_attempts, progress: 100 * parseInt(allQuestions[0].correct_attempts) / parseInt(allQuestions[0].total_attempts) },
+                { id: allQuestions[1].pk, qno: 2, submit: allQuestions[1].total_attempts, progress: 100 * parseInt(allQuestions[1].correct_attempts) / parseInt(allQuestions[1].total_attempts) },
+                { id: allQuestions[2].pk, qno: 3, submit: allQuestions[2].total_attempts, progress: 100 * parseInt(allQuestions[2].correct_attempts) / parseInt(allQuestions[2].total_attempts) },
+                { id: allQuestions[3].pk, qno: 4, submit: allQuestions[3].total_attempts, progress: 100 * parseInt(allQuestions[3].correct_attempts) / parseInt(allQuestions[3].total_attempts) },
+                { id: allQuestions[4].pk, qno: 5, submit: allQuestions[4].total_attempts, progress: 100 * parseInt(allQuestions[4].correct_attempts) / parseInt(allQuestions[4].total_attempts) },
+                { id: allQuestions[5].pk, qno: 6, submit: allQuestions[5].total_attempts, progress: 100 * parseInt(allQuestions[5].correct_attempts) / parseInt(allQuestions[5].total_attempts) }
+            ]);
+            setQuestionData({ loading: false, questions: null });
+           
+        });
+    }, [setQuestionData, setQues]);
+
+    if (questionData.loading) return <Preloader />
+
+    const handleCoding = (e) => {
+        history.push('/coding/' + e.target.id)
+    }
+
 
     return ( 
-        <div className="row">
+        <div className="row mt-1">
             <div className="col-8 col-sm-12">
                 <Table borderless className="tab-head">
                     <thead>
@@ -37,11 +63,11 @@ const Questions = () => {
                                 <td className="submission">{ques.submit}</td>
                                 <td>
                                     <div>
-                                    <ProgressBar animated now={Math.floor(Math.random() * 100)} className="progress" label={`${Math.floor(Math.random()*100)}%`}  />
+                                    <ProgressBar animated now={ques.progress} className="progress" label={`${Number(ques.progress)}%`}  />
                                     </div>
                                 </td>
                                 <td>
-                                    <button className="btn atmpt-btn">View</button>
+                                    <button id={ques.id} className="btn atmpt-btn" onClick={handleCoding}>View</button>
                                 </td>
                                 <td></td>
                             

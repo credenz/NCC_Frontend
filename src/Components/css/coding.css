@@ -39,33 +39,43 @@
 }
 .que-card{
     height:30vw;
-    width:43vw;
+    width:44vw;
     background:linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     color:white;
 }
 .que-body{
     overflow-y: auto;
+   
 }
+
 .check{
     color:white;
 }
+pre{
+    
+    color:white !important;
+     
+       overflow-y: hidden;  
+       white-space: pre-wrap 
+    }
 .custom-area{
     background:linear-gradient(to right,#003e3f,#001122);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
     color:white;
-    width:43vw;
+    width:44vw;
     height:20vw;
     padding:10px;
     outline: none;
     resize:none;
     overflow-y: auto;
 }
-.editor{
+.edit{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5) !important;
     height:30vw !important;
-    width:43vw !important;
+    width:44vw !important;
     font-size: 15px !important;
+    font-family : monospace !important;
 }
 .score{
     background: #26A69A;
@@ -122,7 +132,7 @@ select{
     background: #26A69A;
 }
 .bt{
-    margin-left:5.7vw;
+   margin-left:4vw;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
     outline:none !important;
     background: #26A69A;
@@ -136,7 +146,7 @@ select{
     background: #26A69A;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.5) !important;
 }
-.cbt{
+.cbt:hover{
     background: #26A69A !important;
     box-shadow: none;
 }
@@ -165,7 +175,7 @@ select{
     .cust-inp{
         font-size:35px !important;
     }
-    .editor{
+    .edit{
         height:75vw !important;
         width:75vw !important;
     }
@@ -173,12 +183,11 @@ select{
         margin-top:10vw;
     }
     .bt{
-        margin-left:6vw;
+        margin-left:4vw;
         font-size: auto;
     }
-    .cbt{
-        margin-left:-6vw;
-        font-size:auto;
+    .buttons{
+        margin-left:-7vw;
     }
     .left-side,.right-side{
         margin-left:-1vw;
@@ -190,20 +199,29 @@ select{
     
 }
 
-@media(max-width:380px){
-    .bt{
-        margin-left:4vw;
+@media(max-width:402px){
+    .buttons{
+        margin-left:-12vw;
     }
-    .cbt{
-        margin-left:-7vw;
+    .right-side{
+        margin-left:-5vw;
     }
-    .left-side,.right-side{
-        margin-left:-3vw;
+    .left-side{
+        margin-left:-2vw;
+    }
+    .score{
+        width:50vw;
     }
 }
 
-@media(max-width:365px){
+@media(max-width:375px){
+    .buttons{
+        margin-left:-16vw;
+    }
     .right-side{
         margin-left:-5vw;
+    }
+    .score{
+        width:80vw;
     }
 }
