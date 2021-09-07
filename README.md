@@ -4,25 +4,25 @@ Done in ReactJS.
 
 ## A Glimpse of the User Interface:
 #### 1) Login Page -
-![Screenshot (679).png](./NCC-images/Screenshot (679).png)
+![login.png](./NCC-images/login.png)
 
 ### 2) Instructions Page -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (2).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (2).jpeg)
+![instructions.png](./NCC-images/instructions.png)
 
 ### 3) Coding Page -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (4).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (4).jpeg)
+![codingpage.png](./NCC-images/codingpage.png)
 
 ### 4) LeaderBoard -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (11).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (11).jpeg)
+![leaderboard.png](./NCC-images/leaderboard.png)
 
 ### 5) Question Page -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (8).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (8).jpeg)
+![questionhub.png](./NCC-images/questionhub.png)
 
 ### 6) Results Page -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (10).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (10).jpeg)
+![resultspage.png](./NCC-images/resultspage.png)
 
 ### 7) Submissions Page -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (12).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (12).jpeg)
+![submissions.png](./NCC-images/submissions.png)
 
 ### 8) Testcase Evaluation Page -
-![WhatsApp Image 2021-06-23 at 9.11.16 PM (13).jpeg](./NCC-images/WhatsApp Image 2021-06-23 at 9.11.16 PM (13).jpeg)
+![testcase.jpeg](./NCC-images/testcase.jpeg)
