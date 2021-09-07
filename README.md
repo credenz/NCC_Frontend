@@ -1,5 +1,5 @@
 # NCC_Frontend:
-This Repository contains the Frontend UI for the National Computing Contest 2021.
+This Repository contains the Frontend UI for National Computing Contest 2021, part of Credenz Tech Dayz (CTD).
 Done in ReactJS.
 
 ## A Glimpse of the User Interface:
